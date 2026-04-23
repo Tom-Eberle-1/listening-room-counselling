@@ -634,3 +634,49 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+/* =============================================
+   MOBILE FIXES
+   ============================================= */
+@media (max-width: 768px) {
+
+  /* Fix horizontal overflow */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Stack all inline grids */
+  [style*="grid-template-columns"] {
+    display: block !important;
+  }
+
+  [style*="grid-template-columns"] > * {
+    margin-bottom: 28px;
+  }
+
+  /* Fix images in stacked sections */
+  [style*="height: 420px"],
+  [style*="height: 480px"],
+  [style*="height: 560px"] {
+    height: 260px !important;
+  }
+
+  /* Fix sticky sidebar on book page */
+  [style*="position: sticky"] {
+    position: relative !important;
+    top: auto !important;
+  }
+
+  /* Reduce section padding */
+  [style*="padding: 90px 24px"] {
+    padding: 60px 20px !important;
+  }
+
+  [style*="padding: 80px 24px"] {
+    padding: 60px 20px !important;
+  }
+
+  /* Fix nav toggle */
+  nav {
+    position: relative;
+  }
+}
