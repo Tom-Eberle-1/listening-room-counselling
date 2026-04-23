@@ -643,16 +643,6 @@ footer {
   body {
     overflow-x: hidden;
   }
-
-  /* Stack all inline grids */
-  [style*="grid-template-columns"] {
-    display: block !important;
-  }
-
-  [style*="grid-template-columns"] > * {
-    margin-bottom: 28px;
-  }
-
   /* Fix images in stacked sections */
   [style*="height: 420px"],
   [style*="height: 480px"],
