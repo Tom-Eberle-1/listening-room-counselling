@@ -680,3 +680,214 @@ footer {
     position: relative;
   }
 }
+/* =============================================
+   MOBILE VISUAL POLISH
+   ============================================= */
+@media (max-width: 768px) {
+
+  /* --- TYPOGRAPHY --- */
+  h1 { font-size: 2.4rem; }
+  h2 { font-size: 1.9rem; }
+  h3 { font-size: 1.4rem; }
+
+  .section-label {
+    font-size: 0.68rem;
+  }
+
+  /* --- NAV --- */
+  .nav-logo {
+    font-size: 1.1rem;
+  }
+
+  .nav-inner {
+    padding: 0 20px;
+  }
+
+  /* --- HERO --- */
+  .hero {
+    padding: 48px 20px 56px;
+    min-height: auto;
+  }
+
+  .hero-content h1 {
+    font-size: 2.6rem;
+    margin-bottom: 18px;
+  }
+
+  .hero-text {
+    font-size: 0.97rem;
+    margin-bottom: 28px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* --- PAGE HERO --- */
+  .page-hero,
+  [style*="padding: 80px 24px 60px"] {
+    padding: 52px 20px 40px !important;
+  }
+
+  /* --- BUTTONS --- */
+  .btn {
+    padding: 14px 24px;
+    font-size: 0.88rem;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* --- CARDS --- */
+  .service-card,
+  .animal-card,
+  .approach-card,
+  .location-card {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+
+  /* Inline style cards */
+  [style*="border: 1px solid var(--cream-dark)"] {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+
+  /* --- QUOTE SECTION --- */
+  .quote-section {
+    padding: 60px 20px;
+  }
+
+  .quote-section blockquote {
+    font-size: 1.35rem;
+  }
+
+  /* --- CTA SECTION --- */
+  .cta-section {
+    padding: 64px 20px;
+    text-align: center;
+  }
+
+  .cta-inner {
+    max-width: none;
+  }
+
+  .cta-inner h2 {
+    font-size: 1.9rem;
+    margin-bottom: 14px;
+  }
+
+  .cta-inner p {
+    margin: 0 auto 28px;
+    max-width: none;
+  }
+
+  .cta-inner .btn-primary {
+    display: inline-block;
+    width: auto;
+    padding: 15px 40px;
+  }
+
+  /* --- FOOTER --- */
+  footer {
+    padding: 52px 20px 0;
+  }
+
+  .footer-inner {
+    gap: 40px;
+    padding-bottom: 40px;
+  }
+
+  .footer-bottom {
+    padding: 16px 0;
+  }
+
+  /* --- SECTION DIVIDERS --- */
+  section + section {
+    border-top: none;
+  }
+
+  /* Alternate cream sections stand out more on mobile */
+  [style*="background-color: var(--cream)"] {
+    border-top: 1px solid var(--cream-dark) !important;
+    border-bottom: 1px solid var(--cream-dark) !important;
+  }
+
+  /* --- FORM INPUTS --- */
+  input, select, textarea {
+    font-size: 1rem !important;
+  }
+
+  /* --- SERVICES STRIP (homepage) --- */
+  .services-grid {
+    gap: 20px;
+  }
+
+  .service-card {
+    padding: 32px 24px;
+  }
+
+  /* --- ANIMAL GRID --- */
+  .animal-card {
+    margin-bottom: 0;
+  }
+
+  /* --- INTRO SECTION --- */
+  .intro-grid {
+    gap: 32px;
+  }
+
+  /* --- ABOUT GRID --- */
+  .about-text h2 {
+    font-size: 1.9rem;
+  }
+
+  /* --- REASSURANCE STRIP --- */
+  [style*="display: grid; grid-template-columns: repeat(3, 1fr)"] {
+    gap: 20px !important;
+  }
+
+  /* --- PRICING CARDS --- */
+  [style*="max-width: 900px"] {
+    max-width: 100% !important;
+  }
+
+  /* --- PROCESS STEPS --- */
+  [style*="padding: 40px 36px; border: 1px solid var(--cream-dark)"] {
+    padding: 28px 24px !important;
+  }
+
+  /* --- CONTACT & BOOK FORMS --- */
+  [style*="position: sticky; top: 90px"] {
+    margin-top: 48px;
+  }
+
+  /* --- VISUAL DEPTH --- */
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--cream-dark), transparent);
+  }
+
+  /* Add subtle top accent to key sections */
+  .quote-section::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--sage-light);
+    margin: 0 auto 32px;
+  }
+
+}
