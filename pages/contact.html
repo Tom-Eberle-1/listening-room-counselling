@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | The Listening Room Counselling</title>
+  <meta name="description" content="Get in touch with The Listening Room Counselling Service. Based near Hawkstone Park, Shropshire. No pressure, no commitment." />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">The Listening Room</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="counselling.html">Counselling</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="book.html" class="nav-cta">Book a Session</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section style="padding: 80px 24px 60px; border-bottom: 1px solid var(--cream-dark);">
+    <div class="container">
+      <span class="section-label">Get in touch</span>
+      <h1>Say hello</h1>
+      <p style="font-size: 1.05rem; max-width: 520px; margin-top: 16px;">There is no pressure and no commitment to getting in touch. If you have a question or just want to find out more, send a message and Michelle will get back to you.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT MAIN -->
+  <section style="padding: 90px 24px;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;">
+
+        <!-- FORM -->
+        <div>
+          <span class="section-label">Send a message</span>
+          <h2 style="margin-bottom: 32px;">We'd love to hear from you</h2>
+
+          <div id="contact-form">
+            <div style="margin-bottom: 20px;">
+              <label style="display: block; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--charcoal); margin-bottom: 8px;">Your name</label>
+              <input type="text" id="name" placeholder="Your full name" style="width: 100%; padding: 14px 16px; border: 1px solid var(--cream-dark); border-radius: 2px; font-family: var(--font-body); font-size: 0.95rem; color: var(--charcoal); background: var(--white); outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='var(--sage)'" onblur="this.style.borderColor='var(--cream-dark)'" />
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <label style="display: block; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--charcoal); margin-bottom: 8px;">Email address</label>
+              <input type="email" id="email" placeholder="your@email.com" style="width: 100%; padding: 14px 16px; border: 1px solid var(--cream-dark); border-radius: 2px; font-family: var(--font-body); font-size: 0.95rem; color: var(--charcoal); background: var(--white); outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='var(--sage)'" onblur="this.style.borderColor='var(--cream-dark)'" />
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <label style="display: block; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--charcoal); margin-bottom: 8px;">Phone number <span style="font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--charcoal-light);">(optional)</span></label>
+              <input type="tel" id="phone" placeholder="Your phone number" style="width: 100%; padding: 14px 16px; border: 1px solid var(--cream-dark); border-radius: 2px; font-family: var(--font-body); font-size: 0.95rem; color: var(--charcoal); background: var(--white); outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='var(--sage)'" onblur="this.style.borderColor='var(--cream-dark)'" />
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <label style="display: block; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--charcoal); margin-bottom: 8px;">What brings you here?</label>
+              <select id="reason" style="width: 100%; padding: 14px 16px; border: 1px solid var(--cream-dark); border-radius: 2px; font-family: var(--font-body); font-size: 0.95rem; color: var(--charcoal); background: var(--white); outline: none; appearance: none;">
+                <option value="" disabled selected>Please select</option>
+                <option>Individual counselling</option>
+                <option>Equine assisted therapy</option>
+                <option>Support for a young person</option>
+                <option>General enquiry</option>
+                <option>I'm not sure yet</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom: 28px;">
+              <label style="display: block; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--charcoal); margin-bottom: 8px;">Your message</label>
+              <textarea id="message" rows="5" placeholder="Tell us a little about what you are looking for, or just say hello..." style="width: 100%; padding: 14px 16px; border: 1px solid var(--cream-dark); border-radius: 2px; font-family: var(--font-body); font-size: 0.95rem; color: var(--charcoal); background: var(--white); outline: none; resize: vertical; transition: border-color 0.2s;" onfocus="this.style.borderColor='var(--sage)'" onblur="this.style.borderColor='var(--cream-dark)'"></textarea>
+            </div>
+
+            <button onclick="handleSubmit()" class="btn btn-primary" style="width: 100%; padding: 16px; font-size: 0.95rem;">Send message</button>
+            <div id="form-message" style="margin-top: 16px; font-size: 0.9rem; display: none;"></div>
+          </div>
+
+        </div>
+
+        <!-- INFO -->
+        <div>
+          <span class="section-label">Find us</span>
+          <h2 style="margin-bottom: 32px;">The practice</h2>
+
+          <div style="margin-bottom: 40px;">
+            <p style="font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sage-dark); margin-bottom: 10px; max-width: none;">Address</p>
+            <p style="max-width: none; line-height: 1.9;">Next to Hawkstone Park Hotel and Golf Club<br>North Shropshire</p>
+          </div>
+
+          <div style="margin-bottom: 40px;">
+            <p style="font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sage-dark); margin-bottom: 10px; max-width: none;">Opening hours</p>
+            <p style="max-width: none; line-height: 1.9;">Monday – Friday: 9am – 5pm<br>Saturday: 9am – 12pm<br>Sunday: Closed</p>
+          </div>
+
+          <div style="margin-bottom: 40px;">
+            <p style="font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sage-dark); margin-bottom: 10px; max-width: none;">Email</p>
+            <!-- Replace with Michelle's actual email -->
+            <p style="max-width: none;"><a href="mailto:[email@address.com]" style="color: var(--sage-dark);">[email@address.com]</a></p>
+          </div>
+
+          <div style="margin-bottom: 40px;">
+            <p style="font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sage-dark); margin-bottom: 10px; max-width: none;">Phone</p>
+            <!-- Replace with Michelle's actual phone number -->
+            <p style="max-width: none;"><a href="tel:[phonenumber]" style="color: var(--sage-dark);">[phone number]</a></p>
+          </div>
+
+          <div style="background: var(--cream); border: 1px solid var(--cream-dark); border-radius: 2px; padding: 28px 32px;">
+            <p style="font-size: 0.88rem; max-width: none; color: var(--charcoal-light); line-height: 1.8;">All enquiries are treated with complete confidentiality. Michelle aims to respond within one working day.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p class="nav-logo">The Listening Room</p>
+        <p>Equine Assisted Counselling in Shropshire</p>
+      </div>
+      <div>
+        <p class="footer-heading">Quick Links</p>
+        <ul class="footer-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="counselling.html">Counselling</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="book.html">Book a Session</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-heading">Get in Touch</p>
+        <div class="footer-contact">
+          <p>Hawkstone Park, Shropshire</p>
+          <a href="contact.html">Send a message</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 The Listening Room Counselling Service Limited</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    function handleSubmit() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const msg = document.getElementById('form-message');
+
+      if (!name || !email || !message) {
+        msg.style.display = 'block';
+        msg.style.color = 'var(--earth)';
+        msg.textContent = 'Please fill in your name, email and message before sending.';
+        return;
+      }
+
+      msg.style.display = 'block';
+      msg.style.color = 'var(--sage-dark)';
+      msg.textContent = 'Thank you — your message has been sent. Michelle will be in touch within one working day.';
+    }
+  </script>
+</body>
+</html>
