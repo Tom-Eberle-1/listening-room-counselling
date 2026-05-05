@@ -1166,3 +1166,160 @@ footer {
     height: 320px;
   }
 }
+
+/* =============================================
+   MOBILE FIXES — add to bottom of style.css
+   ============================================= */
+
+@media (max-width: 768px) {
+
+  /* ── Michelle split section ─────────────────
+     Force single column stack on mobile.
+     The grid needs to collapse fully.          */
+  .michelle-section {
+    display: block !important;
+  }
+
+  .michelle-image {
+    height: 320px !important;
+    min-height: 320px !important;
+    width: 100% !important;
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .michelle-img-bg {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .michelle-content {
+    padding: 48px 24px !important;
+    border-left: none !important;
+    border-top: 1px solid var(--cream-dark);
+    width: 100% !important;
+  }
+
+  /* ── Credential badges ───────────────────────
+     Stop badges stretching full width.
+     Let them wrap naturally at content width.  */
+  .michelle-credentials {
+    gap: 6px !important;
+  }
+
+  .michelle-credentials span {
+    flex: 0 1 auto !important;
+    width: auto !important;
+    white-space: normal;
+    font-size: 0.69rem !important;
+  }
+
+  /* ── About page animal grids ─────────────────
+     3-col horse grid → 1 col
+     2-col coming soon → 1 col
+     3-col companions → 1 col                   */
+  .horse-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .coming-soon-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .coming-soon-card {
+    grid-template-columns: 1fr !important;
+    flex-direction: column !important;
+  }
+
+  .coming-soon-img {
+    height: 220px !important;
+    width: 100% !important;
+  }
+
+  .companions-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── Approach grid → 1 col ──────────────────  */
+  .approach-grid-4 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── Supervision grid → 1 col ───────────────  */
+  .supervision-inner {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+
+  /* ── Credential bar → wrap nicely ───────────  */
+  .credential-bar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .credential-bar-divider {
+    display: none;
+  }
+
+  .credential-bar-item {
+    padding: 4px 0;
+  }
+
+  .credential-bar-item p {
+    white-space: normal !important;
+    font-size: 0.76rem;
+  }
+
+  /* ── Counselling page service features ───────  */
+  .service-feature-inner,
+  .service-feature-inner.reverse {
+    grid-template-columns: 1fr !important;
+    direction: ltr !important;
+    gap: 32px !important;
+  }
+
+  .service-feature-img img {
+    height: 260px !important;
+  }
+
+  /* ── Issues grid → 2 col ────────────────────  */
+  .issues-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* ── Expect grid → 1 col ────────────────────  */
+  .expect-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── Contact grid → 1 col ───────────────────  */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 52px !important;
+  }
+
+  /* ── Gallery grids ──────────────────────────  */
+  .horse-grid,
+  .gallery-grid-3,
+  .companions-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .gallery-grid-feature {
+    grid-template-columns: 1fr !important;
+  }
+
+  .gallery-grid-feature .gallery-item:first-child {
+    grid-row: span 1 !important;
+    min-height: 260px !important;
+  }
+
+  .coming-soon-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+}
