@@ -3,9 +3,308 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery | The Listening Room Counselling</title>
-  <meta name="description" content="Photos from The Listening Room Counselling Service — our practice, horses and surroundings near Hawkstone Park, Shropshire." />
+  <title>Gallery | The Listening Room Counselling Shropshire</title>
+  <meta name="description" content="Photos from The Listening Room Counselling Service — the animals, the practice, and the grounds near Hawkstone Park, Shropshire." />
   <link rel="stylesheet" href="../css/style.css" />
+  <style>
+
+    /* ── GALLERY LAYOUT ─────────────────────────── */
+    .gallery-section {
+      padding: 80px 28px 96px;
+      background-color: var(--warm-white);
+    }
+
+    .gallery-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    /* ── CATEGORY BLOCK ─────────────────────────── */
+    .gallery-category {
+      margin-bottom: 80px;
+    }
+
+    .gallery-category:last-child {
+      margin-bottom: 0;
+    }
+
+    .gallery-category-header {
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--cream-dark);
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+    }
+
+    .gallery-category-header h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      margin: 0;
+    }
+
+    .gallery-count {
+      font-size: 0.75rem;
+      color: var(--rose);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      font-family: var(--font-body);
+    }
+
+    /* ── GRID VARIANTS ──────────────────────────── */
+    .gallery-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .gallery-grid-feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 14px;
+    }
+
+    .gallery-grid-feature .gallery-item:first-child {
+      grid-row: span 2;
+    }
+
+    .gallery-grid-mixed {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 240px 240px;
+      gap: 14px;
+    }
+
+    .gallery-grid-mixed .gallery-item:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    /* ── INDIVIDUAL ITEM ────────────────────────── */
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 2px;
+      background-color: var(--linen);
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    /* fixed-height items */
+    .gallery-grid-3 .gallery-item {
+      aspect-ratio: 4/3;
+    }
+
+    .gallery-grid-feature .gallery-item:first-child {
+      min-height: 440px;
+    }
+
+    .gallery-grid-feature .gallery-item:not(:first-child) {
+      aspect-ratio: 4/3;
+    }
+
+    /* ── HOVER OVERLAY ──────────────────────────── */
+    .gallery-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(44, 40, 38, 0);
+      transition: background 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gallery-item:hover .gallery-item-overlay {
+      background: rgba(44, 40, 38, 0.18);
+    }
+
+    .gallery-item-overlay svg {
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-item-overlay svg {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* ── PLACEHOLDER (missing images) ───────────── */
+    .gallery-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: var(--linen);
+    }
+
+    .gallery-placeholder p {
+      font-size: 0.75rem;
+      color: var(--rose-light);
+      max-width: none;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .gallery-placeholder svg {
+      opacity: 0.3;
+    }
+
+    /* ── COMING SOON BANNER ─────────────────────── */
+    .coming-soon-banner {
+      background-color: var(--linen);
+      border: 1px solid var(--cream-dark);
+      border-radius: 2px;
+      padding: 28px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 80px;
+    }
+
+    .coming-soon-banner p {
+      font-size: 0.9rem;
+      max-width: none;
+      line-height: 1.7;
+    }
+
+    .coming-soon-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--rose-light);
+      flex-shrink: 0;
+    }
+
+    /* ── LIGHTBOX ───────────────────────────────── */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(28, 22, 20, 0.94);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      padding: 40px;
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .lightbox-img-wrap {
+      max-width: 90vw;
+      max-height: 85vh;
+      position: relative;
+    }
+
+    .lightbox-img-wrap img {
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      display: block;
+      border-radius: 2px;
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 24px;
+      right: 28px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-family: var(--font-body);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s ease;
+      padding: 8px 0;
+    }
+
+    .lightbox-close:hover { color: rgba(255,255,255,1); }
+
+    .lightbox-nav {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: rgba(255,255,255,0.5);
+      transition: color 0.2s ease;
+      padding: 20px 16px;
+    }
+
+    .lightbox-nav:hover { color: rgba(255,255,255,0.9); }
+    .lightbox-prev { left: 16px; }
+    .lightbox-next { right: 16px; }
+
+    .lightbox-caption {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.08em;
+      font-family: var(--font-body);
+      white-space: nowrap;
+    }
+
+    /* ── MOBILE ─────────────────────────────────── */
+    @media (max-width: 768px) {
+      .gallery-section { padding: 52px 20px 72px; }
+      .gallery-category { margin-bottom: 56px; }
+
+      .gallery-grid-3,
+      .gallery-grid-mixed {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+      }
+
+      .gallery-grid-mixed .gallery-item:first-child {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+
+      .gallery-grid-feature {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid-feature .gallery-item:first-child {
+        grid-row: span 1;
+        min-height: 260px;
+      }
+
+      .lightbox-nav { display: none; }
+      .lightbox { padding: 20px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -22,112 +321,146 @@
         <li><a href="counselling.html">Counselling</a></li>
         <li><a href="gallery.html" class="active">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="book.html" class="nav-cta">Book a Session</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- PAGE HERO -->
-  <section style="padding: 80px 24px 60px; border-bottom: 1px solid var(--cream-dark);">
+  <section style="background-color: var(--linen); padding: 90px 28px 72px; border-bottom: 1px solid var(--cream-dark);">
     <div class="container">
-      <span class="section-label">The practice</span>
-      <h1>Gallery</h1>
-      <p style="font-size: 1.05rem; max-width: 520px; margin-top: 16px;">A glimpse into the space, the animals and the surroundings at The Listening Room near Hawkstone Park, Shropshire.</p>
+      <span class="section-label reveal reveal-up">The practice</span>
+      <h1 class="reveal reveal-up reveal-delay-1" style="margin-top: 12px; font-size: clamp(2.2rem, 4vw, 3.5rem); max-width: 560px; line-height: 1.12;">A glimpse into<br>the <em>space</em></h1>
+      <p class="reveal reveal-up reveal-delay-2" style="font-size: 1.02rem; max-width: 500px; margin-top: 22px; line-height: 1.85;">The animals, the grounds, and the surroundings at The Listening Room near Hawkstone Park, Shropshire.</p>
     </div>
   </section>
 
-  <!-- GALLERY GRID -->
-  <section style="padding: 90px 24px;">
-    <div class="container">
+  <!-- GALLERY -->
+  <section class="gallery-section">
+    <div class="gallery-container">
 
-      <!-- CATEGORY: THE SPACE -->
-      <div style="margin-bottom: 72px;">
-        <span class="section-label">The space</span>
-        <h2 style="margin-bottom: 40px;">The practice</h2>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
-          <div style="background: var(--cream); border-radius: 2px; overflow: hidden; aspect-ratio: 4/3;">
-            <img src="../images/space-1.jpg" alt="The Listening Room practice" style="width: 100%; height: 100%; object-fit: cover;" />
-          </div>
-          <div style="background: var(--cream); border-radius: 2px; overflow: hidden; aspect-ratio: 4/3;">
-            <img src="../images/space-2.jpg" alt="The Listening Room practice" style="width: 100%; height: 100%; object-fit: cover;" />
-          </div>
-          <div style="background: var(--cream); border-radius: 2px; overflow: hidden; aspect-ratio: 4/3;">
-            <img src="../images/space-3.jpg" alt="The Listening Room practice" style="width: 100%; height: 100%; object-fit: cover;" />
-          </div>
+      <!-- THE HERD -->
+      <div class="gallery-category reveal reveal-up">
+        <div class="gallery-category-header">
+          <span class="section-label" style="margin: 0;">The herd</span>
+          <span class="gallery-count">Becca · Crystal · Harley · Roo · Marty</span>
         </div>
-      </div>
-
-      <!-- CATEGORY: THE HORSES -->
-      <div style="margin-bottom: 72px;">
-        <span class="section-label">The horses</span>
-        <h2 style="margin-bottom: 40px;">Our horses</h2>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
-          <div style="background: var(--cream); border-radius: 2px; overflow: hidden; aspect-ratio: 4/3;">
-            <img src="../images/horse-1.jpg" alt="Horse at The Listening Room" style="width: 100%; height: 100%; object-fit: cover;" />
-          </div>
-          <div style="background: var(--cream); border-radius: 2px; overflow: hidden; aspect-ratio: 4/3;">
-            <img src="../images/horse-2.jpg" alt="Horse at The Listening Room" style="width: 100%; height: 100%; object-fit: cover;" />
-          </div>
-          <div style="background: var(--cream); border-radius: 2px; overflow: hidden; aspect-ratio: 4/3;">
-            <img src="../images/horse-3.jpg" alt="Horse at The Listening Room" style="width: 100%; height: 100%; object-fit: cover;" />
-          </div>
-        </div>
-      </div>
-
-      <!-- CATEGORY: THE GROUNDS -->
-      <div style="margin-bottom: 72px;">
-        <span class="section-label">Surroundings</span>
-        <h2 style="margin-bottom: 40px;">The grounds</h2>
-        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 16px;">
-          <div style="background: var(--cream); border-radius: 2px; overflow: hidden; aspect-ratio: 16/9;">
-            <img src="../images/grounds-1.jpg" alt="The grounds at The Listening Room" style="width: 100%; height: 100%; object-fit: cover;" />
-          </div>
-          <div style="display: grid; grid-template-rows: 1fr 1fr; gap: 16px;">
-            <div style="background: var(--cream); border-radius: 2px; overflow: hidden;">
-              <img src="../images/grounds-2.jpg" alt="The grounds at The Listening Room" style="width: 100%; height: 100%; object-fit: cover;" />
+        <div class="gallery-grid-feature">
+          <div class="gallery-item" data-src="../images/horse-4.jpg" data-caption="Becca — Haflinger, The Heart of the Herd">
+            <img src="../images/horse-4.jpg" alt="Becca the Haflinger at The Listening Room" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
             </div>
-            <div style="background: var(--cream); border-radius: 2px; overflow: hidden;">
-              <img src="../images/grounds-3.jpg" alt="The grounds at The Listening Room" style="width: 100%; height: 100%; object-fit: cover;" />
+          </div>
+          <div class="gallery-item" data-src="../images/horse-2.jpg" data-caption="Crystal — Shetland Pony, Our Little Pocket Rocket">
+            <img src="../images/horse-2.jpg" alt="Crystal the Shetland pony at The Listening Room" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+          </div>
+          <div class="gallery-item" data-src="../images/horse-5.jpg" data-caption="Harley — Haflinger, The Cheeky One">
+            <img src="../images/horse-5.jpg" alt="Harley the Haflinger at The Listening Room" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Roo & Marty row -->
+        <div class="gallery-grid-3" style="margin-top: 14px;">
+          <div class="gallery-item" data-src="../images/roo.jpg" data-caption="Roo — Shetland Pony, Our Little Ray of Sunshine">
+            <img src="../images/roo.jpg" alt="Roo the Shetland pony at The Listening Room" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+          </div>
+          <div class="gallery-item" data-src="../images/marty.jpg" data-caption="Marty — The Adventurer">
+            <img src="../images/marty.jpg" alt="Marty the pony at The Listening Room" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+          </div>
+          <div class="gallery-item" data-src="../images/horse-3.jpg" data-caption="The herd at The Listening Room">
+            <img src="../images/horse-3.jpg" alt="Horses at The Listening Room" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- CATEGORY: THE ANIMALS -->
-      <div>
-        <span class="section-label">The animals</span>
-        <h2 style="margin-bottom: 40px;">Dog &amp; cat</h2>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
-          <div style="background: var(--cream); border-radius: 2px; overflow: hidden; aspect-ratio: 4/3;">
-            <img src="../images/dog.jpg" alt="Dog at The Listening Room" style="width: 100%; height: 100%; object-fit: cover;" />
+      <!-- DOGS & CAT -->
+      <div class="gallery-category reveal reveal-up">
+        <div class="gallery-category-header">
+          <span class="section-label" style="margin: 0;">Dogs &amp; cat</span>
+          <span class="gallery-count">Roxy · Ace · Doris</span>
+        </div>
+        <div class="gallery-grid-3">
+          <div class="gallery-item" data-src="../images/dog.jpg" data-caption="Roxy — Chocolate Labrador">
+            <img src="../images/dog.jpg" alt="Roxy the Labrador at The Listening Room" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
           </div>
-          <div style="background: var(--cream); border-radius: 2px; overflow: hidden; aspect-ratio: 4/3;">
-            <img src="../images/cat.jpg" alt="Cat at The Listening Room" style="width: 100%; height: 100%; object-fit: cover;" />
+          <div class="gallery-item" data-src="../images/dog-2.jpg" data-caption="Ace — Cocker Spaniel">
+            <img src="../images/dog-2.jpg" alt="Ace the Cocker Spaniel at The Listening Room" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
           </div>
-          <div style="background: var(--cream); border-radius: 2px; overflow: hidden; aspect-ratio: 4/3;">
-            <img src="../images/animals-3.jpg" alt="Animals at The Listening Room" style="width: 100%; height: 100%; object-fit: cover;" />
+          <div class="gallery-item" data-src="../images/cat.jpg" data-caption="Doris — The Unexpected Guest">
+            <img src="../images/cat.jpg" alt="Doris the cat at The Listening Room" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
           </div>
         </div>
       </div>
 
-    </div>
-  </section>
-
-  <!-- PLACEHOLDER NOTICE -->
-  <section style="background-color: var(--cream); padding: 48px 24px; text-align: center;">
-    <div class="container">
-      <p style="font-size: 0.88rem; color: var(--charcoal-light); max-width: 500px; margin: 0 auto;">Photos coming soon. If you would like to see the practice before your first visit, feel free to <a href="contact.html" style="color: var(--sage-dark);">get in touch</a>.</p>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-inner">
-        <h2>Ready to take the first step?</h2>
-        <p>Getting in touch is simple. We'll have a short conversation to understand what you're looking for, and take it from there — no pressure, no commitment.</p>
-        <a href="book.html" class="btn btn-primary" style="margin-top: 1.5rem;">Book a Session</a>
+      <!-- SESSIONS -->
+      <div class="gallery-category reveal reveal-up">
+        <div class="gallery-category-header">
+          <span class="section-label" style="margin: 0;">Sessions</span>
+          <span class="gallery-count">Equine assisted counselling</span>
+        </div>
+        <div class="gallery-grid-feature">
+          <div class="gallery-item" data-src="../images/equine.jpg" data-caption="Equine assisted counselling at The Listening Room">
+            <img src="../images/equine.jpg" alt="Equine assisted counselling session" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+          </div>
+          <div class="gallery-item" data-src="../images/horse-1.jpg" data-caption="Working alongside the horses">
+            <img src="../images/horse-1.jpg" alt="Working alongside the horses at The Listening Room" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+          </div>
+          <div class="gallery-item" data-src="../images/about-preview.jpg" data-caption="The practice near Hawkstone Park, Shropshire">
+            <img src="../images/about-preview.jpg" alt="The Listening Room practice near Hawkstone Park" loading="lazy" />
+            <div class="gallery-item-overlay">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- COMING SOON BANNER -->
+      <div class="coming-soon-banner reveal reveal-up">
+        <span class="coming-soon-dot"></span>
+        <p>More photos of the practice and grounds are coming soon. If you'd like to see the space before your first visit, Michelle is happy to have a conversation — just <a href="contact.html" style="color: var(--rose-dark); font-weight: 500;">get in touch</a>.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA WARM -->
+  <section class="cta-warm">
+    <div class="cta-warm-inner reveal reveal-up">
+      <span class="section-label" style="color: rgba(250,247,242,0.55);">Whenever you're ready</span>
+      <h2>There's no rush</h2>
+      <p>Getting in touch doesn't mean committing to anything. Just send Michelle a message and she'll come back to you within one working day.</p>
+      <a href="contact.html" class="btn btn-rose" style="margin-top: 2rem; padding: 15px 44px;">Send a message</a>
     </div>
   </section>
 
@@ -135,8 +468,9 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
-        <p class="nav-logo">The Listening Room</p>
-        <p>Equine Assisted Counselling in Shropshire</p>
+        <p class="nav-logo" style="color: var(--cream);">The Listening Room</p>
+        <p style="font-style: italic; color: var(--rose-light); font-family: var(--font-heading); font-size: 1.05rem; margin-top: 6px;">Helping Humans Heal</p>
+        <p style="margin-top: 14px;">Equine Assisted Counselling<br>Hawkstone Park, Shropshire</p>
       </div>
       <div>
         <p class="footer-heading">Quick Links</p>
@@ -146,22 +480,103 @@
           <li><a href="counselling.html">Counselling</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="book.html">Book a Session</a></li>
         </ul>
       </div>
       <div>
         <p class="footer-heading">Get in Touch</p>
         <div class="footer-contact">
           <p>Hawkstone Park, Shropshire</p>
-          <a href="contact.html">Send a message</a>
+          <p><a href="mailto:listeningroomcounselling@gmail.com" style="color: rgba(245,240,232,0.6);">listeningroomcounselling@gmail.com</a></p>
+          <p><a href="tel:07870639770" style="color: rgba(245,240,232,0.6);">07870 639770</a></p>
+          <p style="margin-top: 14px; font-size: 0.78rem; color: rgba(245,240,232,0.38);">Registered MBACP (Accredited)<br>EAGALA Trained · HETI Member</p>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 The Listening Room Counselling Service Limited</p>
+      <p>&copy; 2026 The Listening Room Counselling Service Limited. All rights reserved.</p>
     </div>
   </footer>
 
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" id="lightboxClose">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      Close
+    </button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <div class="lightbox-img-wrap">
+      <img id="lightboxImg" src="" alt="" />
+    </div>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+
   <script src="../js/main.js"></script>
+  <script>
+    // ── LIGHTBOX ─────────────────────────────────
+    const lightbox    = document.getElementById('lightbox');
+    const lbImg       = document.getElementById('lightboxImg');
+    const lbCaption   = document.getElementById('lightboxCaption');
+    const lbClose     = document.getElementById('lightboxClose');
+    const lbPrev      = document.getElementById('lightboxPrev');
+    const lbNext      = document.getElementById('lightboxNext');
+
+    // collect all clickable gallery items
+    const items = Array.from(document.querySelectorAll('.gallery-item[data-src]'));
+    let current = 0;
+
+    function openLightbox(index) {
+      current = index;
+      const item = items[current];
+      lbImg.src = item.dataset.src;
+      lbImg.alt = item.querySelector('img').alt;
+      lbCaption.textContent = item.dataset.caption || '';
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      lbImg.src = '';
+    }
+
+    function navigate(dir) {
+      current = (current + dir + items.length) % items.length;
+      const item = items[current];
+      lbImg.style.opacity = '0';
+      setTimeout(() => {
+        lbImg.src = item.dataset.src;
+        lbImg.alt = item.querySelector('img').alt;
+        lbCaption.textContent = item.dataset.caption || '';
+        lbImg.style.opacity = '1';
+      }, 150);
+    }
+
+    lbImg.style.transition = 'opacity 0.15s ease';
+
+    items.forEach((item, i) => {
+      item.addEventListener('click', () => openLightbox(i));
+    });
+
+    lbClose.addEventListener('click', closeLightbox);
+    lbPrev.addEventListener('click', () => navigate(-1));
+    lbNext.addEventListener('click', () => navigate(1));
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navigate(-1);
+      if (e.key === 'ArrowRight') navigate(1);
+    });
+  </script>
 </body>
 </html>
