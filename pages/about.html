@@ -3,9 +3,367 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | The Listening Room Counselling</title>
-  <meta name="description" content="Meet Michelle Welch and the animals at The Listening Room Counselling Service. Equine assisted counselling near Hawkstone Park, Shropshire." />
+  <title>About Michelle Welch | The Listening Room Counselling Shropshire</title>
+  <meta name="description" content="Meet Michelle Welch — MBACP Accredited counsellor, clinical supervisor, and founder of The Listening Room Counselling Service near Hawkstone Park, Shropshire since 2012." />
   <link rel="stylesheet" href="../css/style.css" />
+  <style>
+
+    /* ── CREDENTIAL BAR ─────────────────────────── */
+    .credential-bar {
+      background-color: var(--charcoal-mid);
+      padding: 18px 28px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .credential-bar-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+
+    .credential-bar-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 24px;
+    }
+
+    .credential-bar-item p {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: rgba(245,240,232,0.65);
+      max-width: none;
+      white-space: nowrap;
+      line-height: 1;
+      letter-spacing: 0.02em;
+    }
+
+    .credential-bar-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background-color: var(--rose);
+      flex-shrink: 0;
+    }
+
+    .credential-bar-divider {
+      width: 1px;
+      height: 16px;
+      background-color: rgba(255,255,255,0.1);
+      flex-shrink: 0;
+    }
+
+    /* ── WHAT THIS MEANS BLOCK ──────────────────── */
+    .accreditation-explainer {
+      background-color: var(--linen);
+      border: 1px solid var(--cream-dark);
+      border-radius: 2px;
+      padding: 32px 36px;
+      margin-top: 32px;
+    }
+
+    .accreditation-explainer p {
+      font-size: 0.91rem;
+      max-width: none;
+      line-height: 1.82;
+      font-style: italic;
+      color: var(--charcoal-light);
+    }
+
+    .accreditation-explainer strong {
+      font-style: normal;
+      color: var(--charcoal);
+      font-weight: 500;
+    }
+
+    /* ── APPROACH CARDS ─────────────────────────── */
+    .approach-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 44px;
+    }
+
+    /* ── ANIMAL SECTION ─────────────────────────── */
+    .animals-intro-strip {
+      background-color: var(--linen);
+      border-top: 1px solid var(--cream-dark);
+      border-bottom: 1px solid var(--cream-dark);
+      padding: 56px 28px;
+      text-align: center;
+    }
+
+    .animals-intro-strip h2 {
+      margin: 12px 0 16px;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+    }
+
+    .animals-intro-strip p {
+      max-width: 560px;
+      margin: 0 auto;
+      font-size: 0.97rem;
+      line-height: 1.85;
+    }
+
+    .animal-sub-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--rose);
+      display: block;
+      margin-bottom: 28px;
+    }
+
+    /* ── HORSE FEATURE CARD ─────────────────────── */
+    .horse-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .horse-card {
+      background-color: var(--warm-white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 2px;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .horse-card:hover {
+      border-color: var(--rose-light);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(176,133,133,0.1);
+    }
+
+    .horse-card-img {
+      height: 280px;
+      overflow: hidden;
+    }
+
+    .horse-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.7s ease;
+      display: block;
+    }
+
+    .horse-card:hover .horse-card-img img {
+      transform: scale(1.04);
+    }
+
+    .horse-card-body {
+      padding: 28px 28px 32px;
+    }
+
+    .horse-card-role {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--rose);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .horse-card-body h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      color: var(--charcoal);
+    }
+
+    .horse-card-body p {
+      font-size: 0.9rem;
+      max-width: none;
+      line-height: 1.82;
+    }
+
+    /* ── COMING SOON CARDS (ROO & MARTY) ────────── */
+    .coming-soon-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+
+    .coming-soon-card {
+      background-color: var(--warm-white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 2px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      transition: var(--transition);
+    }
+
+    .coming-soon-card:hover {
+      border-color: var(--rose-light);
+      box-shadow: 0 12px 40px rgba(176,133,133,0.08);
+    }
+
+    .coming-soon-img {
+      overflow: hidden;
+    }
+
+    .coming-soon-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .coming-soon-body {
+      padding: 28px 32px;
+    }
+
+    .coming-soon-body h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .coming-soon-body p {
+      font-size: 0.9rem;
+      max-width: none;
+      line-height: 1.82;
+    }
+
+    /* ── DOGS & CAT GRID ────────────────────────── */
+    .companions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+
+    /* ── SUPERVISION ────────────────────────────── */
+    .supervision-section {
+      padding: 90px 28px;
+      background-color: var(--linen);
+      border-top: 1px solid var(--cream-dark);
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .supervision-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .supervision-list {
+      background-color: var(--warm-white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 2px;
+      padding: 36px 40px;
+    }
+
+    .supervision-list h3 {
+      font-size: 1.2rem;
+      margin-bottom: 22px;
+      color: var(--charcoal);
+    }
+
+    .supervision-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+
+    .supervision-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .supervision-list li span {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: var(--rose);
+      flex-shrink: 0;
+      margin-top: 9px;
+    }
+
+    .supervision-list li p {
+      font-size: 0.92rem;
+      max-width: none;
+      line-height: 1.75;
+    }
+
+    .supervision-meta {
+      margin-top: 24px;
+      padding-top: 22px;
+      border-top: 1px solid var(--cream-dark);
+      font-size: 0.8rem;
+      font-style: italic;
+      color: var(--charcoal-light);
+    }
+
+    /* ── MOBILE ─────────────────────────────────── */
+    @media (max-width: 768px) {
+
+      .michelle-section {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .michelle-image {
+        height: 340px;
+        min-height: 300px;
+      }
+      .michelle-content {
+        padding: 48px 24px;
+        border-left: none;
+        border-top: 1px solid var(--cream-dark);
+      }
+
+      .credential-bar-inner {
+        justify-content: flex-start;
+        gap: 0;
+      }
+      .credential-bar-item {
+        padding: 6px 14px 6px 0;
+      }
+      .credential-bar-divider { display: none; }
+      .credential-bar-item p { white-space: normal; }
+
+      .approach-grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .horse-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .horse-card-img { height: 220px; }
+
+      .coming-soon-grid {
+        grid-template-columns: 1fr;
+      }
+      .coming-soon-card {
+        grid-template-columns: 1fr;
+      }
+      .coming-soon-img {
+        height: 220px;
+      }
+
+      .companions-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .supervision-inner {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -22,138 +380,293 @@
         <li><a href="counselling.html">Counselling</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="book.html" class="nav-cta">Book a Session</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- PAGE HERO -->
-  <section style="padding: 80px 24px 60px; border-bottom: 1px solid var(--cream-dark);">
+  <section style="background-color: var(--linen); padding: 90px 28px 72px; border-bottom: 1px solid var(--cream-dark);">
     <div class="container">
-      <span class="section-label">About the practice</span>
-      <h1>The team</h1>
-      <p style="font-size: 1.05rem; max-width: 560px; margin-top: 16px;">At The Listening Room, you are never alone in a room. You are met by people and animals who create a space of calm, honesty and connection.</p>
+      <span class="section-label reveal reveal-up">About the practice</span>
+      <h1 class="reveal reveal-up reveal-delay-1" style="margin-top: 12px; font-size: clamp(2.2rem, 4vw, 3.5rem); max-width: 620px; line-height: 1.12;">Counselling that meets you<br>where you <em>are</em></h1>
+      <p class="reveal reveal-up reveal-delay-2" style="font-size: 1.02rem; max-width: 520px; margin-top: 22px; line-height: 1.85;">The Listening Room has been offering calm, relational support to children, young people, adults, and practitioners since 2012 — outdoors, indoors, and online.</p>
     </div>
   </section>
 
-  <!-- MICHELLE -->
-  <section style="padding: 90px 24px;">
-    <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
-        <div>
-          <img src="../images/michelle.jpg" alt="Michelle Welch, counsellor at The Listening Room" style="width: 100%; height: 480px; object-fit: cover; border-radius: 2px;" />
-        </div>
-        <div>
-          <span class="section-label">Founder &amp; Lead Counsellor</span>
-          <h2 style="margin-bottom: 20px;">Michelle Welch</h2>
-          <p style="margin-bottom: 16px; max-width: none;">Michelle founded The Listening Room Counselling Service with a belief that meaningful therapeutic work can happen anywhere — and that some of the most profound conversations happen outdoors, in the company of animals.</p>
-          <p style="margin-bottom: 16px; max-width: none;">She is a fully accredited counsellor with many years of experience working with adults and young people in private practice and school environments. She offers individual counselling and equine assisted therapy from the practice near Hawkstone Park Hotel and Golf Club.</p>
-          <p style="max-width: none;">Michelle works with people navigating anxiety, depression, grief, relationship difficulties, life transitions, and more — always at your pace, always without judgment.</p>
-        </div>
+  <!-- MICHELLE — FULL BLEED SPLIT -->
+  <section class="michelle-section">
+    <div class="michelle-image reveal reveal-left">
+      <div class="michelle-img-bg" style="background-image: url('../images/michelle.jpg');"></div>
+    </div>
+    <div class="michelle-content reveal reveal-right">
+      <span class="section-label">Founder &amp; Lead Counsellor</span>
+      <h2>Michelle Welch</h2>
+      <p>Hello, I'm Michelle. I'm a MBACP Accredited counsellor and clinical supervisor, and I founded The Listening Room in 2012 with a belief that some of the most meaningful conversations happen not in a room — but outdoors, in the company of animals.</p>
+      <p>I work with children, young people, adults, and fellow practitioners — in person, online, and through equine-assisted sessions with my lifelong herd. My practice is shaped by many years of experience across schools, residential children's homes, and wider support networks.</p>
+      <p>Whatever you bring to a session, my aim is always the same: to create a grounded, reflective space where you feel safe enough to breathe, explore, and grow.</p>
+      <div class="michelle-credentials">
+        <span>Registered MBACP (Accredited)</span>
+        <span>FD Counselling &amp; Psychotherapy — Edge Hill University 2011</span>
+        <span>BACP Accredited 2015</span>
+        <span>Level 6 Supervision Certificate 2019</span>
+        <span>EAGALA Trained</span>
+        <span>STORM Suicide Prevention</span>
+        <span>Trauma-Informed Practice</span>
+        <span>HETI Federation Member</span>
+        <span>EASP Registered Practitioner</span>
+        <span>DSL Safeguarding Trained</span>
       </div>
     </div>
   </section>
 
-  <!-- ANIMALS -->
-  <section style="background-color: var(--cream); padding: 90px 24px;">
-    <div class="container">
-      <span class="section-label">The rest of the team</span>
-      <h2 style="margin-bottom: 16px;">Meet the animals</h2>
-      <p style="margin-bottom: 48px; max-width: 600px;">Our horses, dog and cat are an integral part of what makes The Listening Room unique. Animals are honest, present and non-judgmental — qualities that make them surprisingly powerful therapeutic companions.</p>
-      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px;">
-
-        <div style="background: var(--white); border: 1px solid var(--cream-dark); border-radius: 2px; overflow: hidden;">
-          <img src="../images/horse-1.jpg" alt="Horse at The Listening Room" style="width: 100%; height: 240px; object-fit: cover;" />
-          <div style="padding: 28px 32px;">
-            <span class="section-label">Horse</span>
-            <h3 style="margin-bottom: 10px; font-size: 1.4rem;">[Name]</h3>
-            <p style="font-size: 0.92rem; max-width: none;">A gentle and perceptive presence in our equine sessions. Horses sense emotion and respond honestly — offering clients a unique form of feedback that words often cannot.</p>
-          </div>
-        </div>
-
-        <div style="background: var(--white); border: 1px solid var(--cream-dark); border-radius: 2px; overflow: hidden;">
-          <img src="../images/horse-2.jpg" alt="Horse at The Listening Room" style="width: 100%; height: 240px; object-fit: cover;" />
-          <div style="padding: 28px 32px;">
-            <span class="section-label">Horse</span>
-            <h3 style="margin-bottom: 10px; font-size: 1.4rem;">[Name]</h3>
-            <p style="font-size: 0.92rem; max-width: none;">Each horse brings their own character to a session. Working alongside them encourages clients to slow down, be present and tune into how they are really feeling.</p>
-          </div>
-        </div>
-
-        <div style="background: var(--white); border: 1px solid var(--cream-dark); border-radius: 2px; overflow: hidden;">
-          <img src="../images/dog.jpg" alt="Dog at The Listening Room" style="width: 100%; height: 240px; object-fit: cover;" />
-          <div style="padding: 28px 32px;">
-            <span class="section-label">Dog</span>
-            <h3 style="margin-bottom: 10px; font-size: 1.4rem;">[Name]</h3>
-            <p style="font-size: 0.92rem; max-width: none;">A warm and friendly presence around the practice. Dogs have a natural ability to ease tension and make people feel instantly at ease — especially younger clients.</p>
-          </div>
-        </div>
-
-        <div style="background: var(--white); border: 1px solid var(--cream-dark); border-radius: 2px; overflow: hidden;">
-          <img src="../images/cat.jpg" alt="Cat at The Listening Room" style="width: 100%; height: 240px; object-fit: cover;" />
-          <div style="padding: 28px 32px;">
-            <span class="section-label">Cat</span>
-            <h3 style="margin-bottom: 10px; font-size: 1.4rem;">[Name]</h3>
-            <p style="font-size: 0.92rem; max-width: none;">Often found somewhere comfortable and unbothered. A calm, independent presence that adds to the relaxed atmosphere of the practice.</p>
-          </div>
-        </div>
-
+  <!-- CREDENTIAL BAR — what MBACP Accredited actually means -->
+  <div class="credential-bar">
+    <div class="credential-bar-inner">
+      <div class="credential-bar-item">
+        <span class="credential-bar-dot"></span>
+        <p>MBACP Accredited — the highest standard of professional recognition in UK counselling</p>
+      </div>
+      <div class="credential-bar-divider"></div>
+      <div class="credential-bar-item">
+        <span class="credential-bar-dot"></span>
+        <p>Practising since 2011 · Established The Listening Room 2012</p>
+      </div>
+      <div class="credential-bar-divider"></div>
+      <div class="credential-bar-item">
+        <span class="credential-bar-dot"></span>
+        <p>EAGALA Trained · HETI Federation Member · EASP Registered</p>
+      </div>
+      <div class="credential-bar-divider"></div>
+      <div class="credential-bar-item">
+        <span class="credential-bar-dot"></span>
+        <p>DSL Safeguarding Trained · Trauma-Informed · STORM Certified</p>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- APPROACH -->
-  <section style="padding: 90px 24px;">
+  <section style="padding: 90px 28px; background-color: var(--warm-white); border-bottom: 1px solid var(--cream-dark);">
+    <div class="container" style="max-width: var(--max-width);">
+      <div class="reveal reveal-up">
+        <span class="section-label">How I work</span>
+        <h2 style="margin: 14px 0 12px;">My approach</h2>
+        <p style="max-width: 540px; font-size: 0.97rem; line-height: 1.85;">My practice is integrative — drawing on person-centred therapy, CBT, systemic thinking, solution-focused work, and psychodynamic understanding. I use whatever is most helpful for you, at the pace that feels right.</p>
+      </div>
+      <div class="approach-grid-4">
+        <div class="approach-card reveal reveal-up reveal-delay-1">
+          <h3>Person-centred</h3>
+          <p style="font-size: 0.92rem; max-width: none; line-height: 1.82;">There is no fixed script. Every session is shaped entirely around you — what you bring, what you need, and what feels right at the time.</p>
+        </div>
+        <div class="approach-card reveal reveal-up reveal-delay-2">
+          <h3>Integrative</h3>
+          <p style="font-size: 0.92rem; max-width: none; line-height: 1.82;">Drawing on CBT, systemic thinking, solution-focused and psychodynamic approaches, I adapt to you — not the other way around.</p>
+        </div>
+        <div class="approach-card reveal reveal-up reveal-delay-1">
+          <h3>Nature-based</h3>
+          <p style="font-size: 0.92rem; max-width: none; line-height: 1.82;">The outdoors has a unique power to support emotional wellbeing. Equine-assisted sessions take full advantage of working in a calm, natural setting.</p>
+        </div>
+        <div class="approach-card reveal reveal-up reveal-delay-2">
+          <h3>Without judgement</h3>
+          <p style="font-size: 0.92rem; max-width: none; line-height: 1.82;">Whatever you bring to a session, you will be met with honesty, warmth, and complete confidentiality. Always at your pace.</p>
+        </div>
+      </div>
+
+      <div class="accreditation-explainer reveal reveal-up">
+        <p><strong>What does MBACP Accredited mean?</strong> BACP Accreditation is the highest professional recognition available to counsellors in the UK. It requires a minimum of 450 supervised hours of practice, advanced training, and ongoing professional development — and must be renewed regularly. When you work with Michelle, you are working with one of the most rigorously qualified counsellors in the country.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE ANIMALS — INTRO STRIP -->
+  <div class="animals-intro-strip">
+    <div class="reveal reveal-up">
+      <span class="section-label">The rest of the team</span>
+      <h2>Meet the animals</h2>
+      <p>Horses, dogs, and one very sociable cat. Each one brings their own character, warmth, and therapeutic presence — honest, patient, and non-judgmental in ways that can be surprisingly powerful.</p>
+    </div>
+  </div>
+
+  <!-- THE HERD -->
+  <section style="padding: 72px 28px 80px; background-color: var(--warm-white);">
+    <div class="container" style="max-width: var(--max-width);">
+
+      <span class="animal-sub-label reveal reveal-up">The herd</span>
+
+      <div class="horse-grid">
+
+        <!-- BECCA -->
+        <div class="horse-card reveal reveal-up reveal-delay-1">
+          <div class="horse-card-img">
+            <img src="../images/horse-4.jpg" alt="Becca the Haflinger — The Listening Room" />
+          </div>
+          <div class="horse-card-body">
+            <span class="horse-card-role">Haflinger · The Heart of the Herd</span>
+            <h3>Becca</h3>
+            <p>Becca embodies warmth from the moment you meet her. Kind, caring, and deeply genuine — she is often the mother of the herd, offering quiet reassurance and steady support. Those who feel anxious, sad, or a little lost are naturally drawn to her. She especially loves working with children and young people.</p>
+          </div>
+        </div>
+
+        <!-- CRYSTAL -->
+        <div class="horse-card reveal reveal-up reveal-delay-2">
+          <div class="horse-card-img">
+            <img src="../images/horse-2.jpg" alt="Crystal the Shetland pony — The Listening Room" />
+          </div>
+          <div class="horse-card-body">
+            <span class="horse-card-role">Shetland Pony · Our Little Pocket Rocket</span>
+            <h3>Crystal</h3>
+            <p>Crystal arrived alongside Becca in 2015 — full of mischief, humour, and big personality packed into a tiny body. She loves being brushed and pampered, but she's never shy about letting you know when something isn't to her liking. Wonderfully expressive and always honest. Crystal never fails to make people smile.</p>
+          </div>
+        </div>
+
+        <!-- HARLEY -->
+        <div class="horse-card reveal reveal-up reveal-delay-3">
+          <div class="horse-card-img">
+            <img src="../images/horse-5.jpg" alt="Harley the Haflinger — The Listening Room" />
+          </div>
+          <div class="horse-card-body">
+            <span class="horse-card-role">Haflinger · The Cheeky One</span>
+            <h3>Harley</h3>
+            <p>Harley joined us as a yearling and is now 12 years old. Full of attitude, curiosity, and charm — which is probably why so many teenagers love working with her. She's mischievous, funny, and always eager to be involved. Harley loves to be the centre of attention and has a wonderful way of drawing everyone in.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ROO & MARTY — JOINING SOON -->
+      <div style="margin-top: 52px;">
+        <span class="animal-sub-label reveal reveal-up">Joining the herd soon</span>
+        <div class="coming-soon-grid">
+
+          <!-- ROO -->
+          <div class="coming-soon-card reveal reveal-left">
+            <div class="coming-soon-img">
+              <img src="../images/roo.jpg" alt="Roo the Shetland pony — The Listening Room" />
+            </div>
+            <div class="coming-soon-body">
+              <span class="horse-card-role">Shetland Pony · Our Little Ray of Sunshine</span>
+              <h3>Roo</h3>
+              <p>Roo is a tiny Shetland pony with a huge personality and an even bigger heart. Gentle, kind, and full of warmth — she loves being brushed, pampered, and spending time with children. Her calm nature helps children feel safe and able to connect, often helping them express feelings without needing words.</p>
+            </div>
+          </div>
+
+          <!-- MARTY -->
+          <div class="coming-soon-card reveal reveal-right">
+            <div class="coming-soon-img">
+              <img src="../images/marty.jpg" alt="Marty the pony — The Listening Room" />
+            </div>
+            <div class="coming-soon-body">
+              <span class="horse-card-role">Pony · The Adventurer</span>
+              <h3>Marty</h3>
+              <p>Marty is a happy-go-lucky chap with a heart as big as his personality. Full of fun and always ready for an adventure, he loves heading out on hacks with the girls. With his kind nature and gentle spirit, he adores being brushed, fussed over, and chatted to — the sort of pony who makes every day feel a little brighter.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- DOGS & CAT -->
+      <div style="margin-top: 64px; padding-top: 56px; border-top: 1px solid var(--cream-dark);">
+        <span class="animal-sub-label reveal reveal-up">Dogs &amp; cat</span>
+        <div class="companions-grid">
+
+          <!-- ROXY -->
+          <div class="horse-card reveal reveal-up reveal-delay-1">
+            <div class="horse-card-img" style="height: 240px;">
+              <img src="../images/dog.jpg" alt="Roxy the Labrador — The Listening Room" />
+            </div>
+            <div class="horse-card-body">
+              <span class="horse-card-role">Chocolate Labrador</span>
+              <h3>Roxy</h3>
+              <p>Roxy has a natural gift for connecting with people of all ages. She has an intuitive way of knowing what each person needs — sometimes it's play and engagement, other times it's quiet companionship — and she offers it with her whole heart.</p>
+            </div>
+          </div>
+
+          <!-- ACE -->
+          <div class="horse-card reveal reveal-up reveal-delay-2">
+            <div class="horse-card-img" style="height: 240px;">
+              <img src="../images/dog-2.jpg" alt="Ace the Cocker Spaniel — The Listening Room" />
+            </div>
+            <div class="horse-card-body">
+              <span class="horse-card-role">Cocker Spaniel · Newest Member</span>
+              <h3>Ace</h3>
+              <p>Ace approaches every day with boundless enthusiasm and a huge, affectionate heart. He works beautifully with clients who have higher energy — together, they learn how to slow down, settle, and find calm. Full of fun, curiosity, and classic puppy antics.</p>
+            </div>
+          </div>
+
+          <!-- DORIS -->
+          <div class="horse-card reveal reveal-up reveal-delay-3">
+            <div class="horse-card-img" style="height: 240px;">
+              <img src="../images/cat.jpg" alt="Doris the cat — The Listening Room" />
+            </div>
+            <div class="horse-card-body">
+              <span class="horse-card-role">Cat · The Unexpected Guest</span>
+              <h3>Doris</h3>
+              <p>Doris has a habit of appearing out of nowhere to join a session — much to everyone's delight. You might meet her in the woods as you return from the ponies, or she may greet you as you arrive or leave. A little ray of sunshine who adds an unexpected but very welcome bonus.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLINICAL SUPERVISION -->
+  <section class="supervision-section">
     <div class="container">
-      <span class="section-label">How we work</span>
-      <h2 style="margin-bottom: 48px;">Our approach</h2>
-      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px;">
+      <div class="supervision-inner">
 
-        <div style="padding: 36px; border: 1px solid var(--cream-dark); border-radius: 2px;">
-          <h3 style="font-size: 1.3rem; margin-bottom: 12px;">Person-centred</h3>
-          <p style="font-size: 0.92rem; max-width: none;">We work at your pace, in a way that feels right for you. There is no fixed script — every session is shaped around your needs.</p>
+        <div class="reveal reveal-left">
+          <span class="section-label">For fellow practitioners</span>
+          <h2 style="margin: 14px 0 24px; line-height: 1.2;">Clinical Supervision</h2>
+          <p style="max-width: none; margin-bottom: 16px; font-size: 0.97rem; line-height: 1.85;">I have been a clinical supervisor for many years and value the variety, depth, and professional connection it brings. I particularly enjoy supporting trainee counsellors as they grow in confidence and move toward qualification.</p>
+          <p style="max-width: none; margin-bottom: 16px; font-size: 0.97rem; line-height: 1.85;">My approach is integrative — grounded in the person-centred model and informed by CBT, systemic thinking, and the Seven Eyed Model of Supervision. I work within the BACP Ethical Framework and follow the professional standards of HETI.</p>
+          <p style="max-width: none; margin-bottom: 32px; font-size: 0.97rem; line-height: 1.85;">I also offer equine-assisted counselling supervision for practitioners who incorporate horses into their therapeutic work. Supervision is available monthly or fortnightly, online and in person.</p>
+          <a href="contact.html" class="btn btn-outline">Ask about supervision</a>
         </div>
 
-        <div style="padding: 36px; border: 1px solid var(--cream-dark); border-radius: 2px;">
-          <h3 style="font-size: 1.3rem; margin-bottom: 12px;">Nature-based</h3>
-          <p style="font-size: 0.92rem; max-width: none;">We believe the outdoors has a unique power to support emotional wellbeing. Our equine sessions take full advantage of working in a natural environment.</p>
-        </div>
-
-        <div style="padding: 36px; border: 1px solid var(--cream-dark); border-radius: 2px;">
-          <h3 style="font-size: 1.3rem; margin-bottom: 12px;">Non-judgmental</h3>
-          <p style="font-size: 0.92rem; max-width: none;">Whatever you bring to a session, you will be met with honesty, warmth and complete confidentiality.</p>
-        </div>
-
-        <div style="padding: 36px; border: 1px solid var(--cream-dark); border-radius: 2px;">
-          <h3 style="font-size: 1.3rem; margin-bottom: 12px;">Experienced</h3>
-          <p style="font-size: 0.92rem; max-width: none;">Michelle has worked extensively with adults and young people across private practice and school settings throughout Shropshire.</p>
+        <div class="supervision-list reveal reveal-right">
+          <h3>Supervision can help you</h3>
+          <ul>
+            <li>
+              <span></span>
+              <p>Explore what feels stuck in client work</p>
+            </li>
+            <li>
+              <span></span>
+              <p>Reflect on new or challenging clinical issues</p>
+            </li>
+            <li>
+              <span></span>
+              <p>Think through CPD, accreditation, or qualification pathways</p>
+            </li>
+            <li>
+              <span></span>
+              <p>Consider the practical and emotional aspects of private practice</p>
+            </li>
+            <li>
+              <span></span>
+              <p>Process personal material activated through client work</p>
+            </li>
+            <li>
+              <span></span>
+              <p>Receive specialist equine-assisted counselling supervision</p>
+            </li>
+          </ul>
+          <p class="supervision-meta">Available online and in person &nbsp;·&nbsp; Monthly or fortnightly &nbsp;·&nbsp; Trainees and qualified practitioners welcome</p>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- LOCATION -->
-  <section style="background-color: var(--cream); padding: 90px 24px;">
-    <div class="container">
-      <span class="section-label">Where to find us</span>
-      <h2 style="margin-bottom: 40px;">Our location</h2>
-      <div style="background: var(--white); border: 1px solid var(--cream-dark); border-radius: 2px; padding: 48px; max-width: 640px;">
-        <h3 style="font-size: 1.4rem; margin-bottom: 14px;">Hawkstone Park, North Shropshire</h3>
-        <p style="max-width: none; margin-bottom: 12px;">Our practice is located next to Hawkstone Park Hotel and Golf Club, in a peaceful rural setting that lends itself naturally to equine assisted therapy and outdoor counselling work.</p>
-        <p style="font-size: 0.82rem; color: var(--sage-dark); font-weight: 500; letter-spacing: 0.02em; max-width: none;">Open weekdays 9am – 5pm &nbsp;·&nbsp; Saturday 9am – 12pm</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-inner">
-        <h2>Ready to take the first step?</h2>
-        <p>Getting in touch is simple. We'll have a short conversation to understand what you're looking for, and take it from there — no pressure, no commitment.</p>
-        <a href="book.html" class="btn btn-primary" style="margin-top: 1.5rem;">Book a Session</a>
-      </div>
+  <!-- CTA WARM -->
+  <section class="cta-warm">
+    <div class="cta-warm-inner reveal reveal-up">
+      <span class="section-label" style="color: rgba(250,247,242,0.55);">Whenever you're ready</span>
+      <h2>There's no rush</h2>
+      <p>Getting in touch doesn't mean committing to anything. Just send Michelle a message and she'll come back to you within one working day.</p>
+      <a href="contact.html" class="btn btn-rose" style="margin-top: 2rem; padding: 15px 44px;">Send a message</a>
     </div>
   </section>
 
@@ -161,8 +674,9 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
-        <p class="nav-logo">The Listening Room</p>
-        <p>Equine Assisted Counselling in Shropshire</p>
+        <p class="nav-logo" style="color: var(--cream);">The Listening Room</p>
+        <p style="font-style: italic; color: var(--rose-light); font-family: var(--font-heading); font-size: 1.05rem; margin-top: 6px;">Helping Humans Heal</p>
+        <p style="margin-top: 14px;">Equine Assisted Counselling<br>Hawkstone Park, Shropshire</p>
       </div>
       <div>
         <p class="footer-heading">Quick Links</p>
@@ -172,19 +686,20 @@
           <li><a href="counselling.html">Counselling</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="book.html">Book a Session</a></li>
         </ul>
       </div>
       <div>
         <p class="footer-heading">Get in Touch</p>
         <div class="footer-contact">
           <p>Hawkstone Park, Shropshire</p>
-          <a href="contact.html">Send a message</a>
+          <p><a href="mailto:listeningroomcounselling@gmail.com" style="color: rgba(245,240,232,0.6);">listeningroomcounselling@gmail.com</a></p>
+          <p><a href="tel:07870639770" style="color: rgba(245,240,232,0.6);">07870 639770</a></p>
+          <p style="margin-top: 14px; font-size: 0.78rem; color: rgba(245,240,232,0.38);">Registered MBACP (Accredited)<br>EAGALA Trained · HETI Member</p>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 The Listening Room Counselling Service Limited</p>
+      <p>&copy; 2026 The Listening Room Counselling Service Limited. All rights reserved.</p>
     </div>
   </footer>
 
