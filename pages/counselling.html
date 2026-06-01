@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Counselling Services | The Listening Room Shropshire</title>
-  <meta name="description" content="Individual counselling, equine assisted therapy, support for children and young people, and clinical supervision near Hawkstone Park, Shropshire. Led by Michelle Welch, Registered MBACP Accredited." />
+  <title>Counselling Services | The Listening Room Counselling Service</title>
+  <meta name="description" content="Individual counselling, equine assisted counselling and learning, and support for children and young people in Shropshire. Michelle Welch, Registered MBACP Accredited." />
   <link rel="stylesheet" href="../css/style.css" />
   <style>
 
-    /* ── SERVICE FEATURE SECTIONS ───────────────── */
     .service-feature {
       padding: 96px 28px;
       border-bottom: 1px solid var(--cream-dark);
@@ -36,7 +35,6 @@
     }
 
     .service-feature-img {
-      position: relative;
       border-radius: 2px;
       overflow: hidden;
     }
@@ -55,6 +53,29 @@
       transform: scale(1.03);
     }
 
+    /* Image placeholder for missing photos */
+    .service-feature-img-placeholder {
+      width: 100%;
+      height: 480px;
+      background-color: var(--linen);
+      border: 1px dashed var(--cream-dark);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .service-feature-img-placeholder p {
+      font-size: 0.78rem;
+      color: var(--rose-light);
+      max-width: none;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
     .service-text h2 {
       font-size: clamp(1.8rem, 2.8vw, 2.4rem);
       margin: 14px 0 22px;
@@ -68,11 +89,24 @@
       margin-bottom: 16px;
     }
 
-    .service-text p:last-of-type {
-      margin-bottom: 28px;
+    .delivery-strip {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 20px 0 28px;
     }
 
-    /* ── PRESENTING ISSUES ──────────────────────── */
+    .delivery-tag {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--charcoal-mid);
+      background-color: var(--linen);
+      border: 1px solid var(--cream-dark);
+      padding: 6px 14px;
+      border-radius: 2px;
+    }
+
     .issues-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -90,7 +124,6 @@
 
     .issue-pill:hover {
       border-color: var(--rose-light);
-      background-color: var(--white);
     }
 
     .issue-pill p {
@@ -98,10 +131,8 @@
       color: var(--charcoal);
       max-width: none;
       line-height: 1.4;
-      font-weight: 400;
     }
 
-    /* ── WHAT TO EXPECT ─────────────────────────── */
     .expect-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -117,9 +148,7 @@
       transition: var(--transition);
     }
 
-    .expect-card:hover {
-      border-color: var(--rose-light);
-    }
+    .expect-card:hover { border-color: var(--rose-light); }
 
     .expect-number {
       display: block;
@@ -132,18 +161,9 @@
       margin-bottom: 20px;
     }
 
-    .expect-card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 12px;
-    }
+    .expect-card h3 { font-size: 1.25rem; margin-bottom: 12px; }
+    .expect-card p { font-size: 0.92rem; max-width: none; line-height: 1.8; }
 
-    .expect-card p {
-      font-size: 0.92rem;
-      max-width: none;
-      line-height: 1.8;
-    }
-
-    /* ── FEES BLOCK ─────────────────────────────── */
     .fees-block {
       background-color: var(--warm-white);
       border: 1px solid var(--cream-dark);
@@ -153,59 +173,36 @@
       margin-top: 40px;
     }
 
-    .fees-block h3 {
-      font-size: 1.4rem;
-      margin-bottom: 16px;
+    .fees-block h3 { font-size: 1.4rem; margin-bottom: 16px; }
+    .fees-block p { font-size: 0.95rem; max-width: none; line-height: 1.85; margin-bottom: 14px; }
+
+    .fee-amount {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--charcoal);
+      line-height: 1;
+      margin-bottom: 6px;
     }
 
-    .fees-block p {
-      font-size: 0.95rem;
-      max-width: none;
-      line-height: 1.85;
-      margin-bottom: 14px;
+    .fee-label {
+      font-size: 0.82rem;
+      color: var(--charcoal-light);
+      margin-bottom: 20px !important;
     }
 
-    .fees-block p:last-of-type {
-      margin-bottom: 28px;
-    }
-
-    /* ── MODALITY TABS (online/in-person note) ───── */
-    .delivery-strip {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 24px;
-    }
-
-    .delivery-tag {
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      color: var(--charcoal-mid);
-      background-color: var(--linen);
-      border: 1px solid var(--cream-dark);
-      padding: 6px 14px;
-      border-radius: 2px;
-    }
-
-    /* ── MOBILE ─────────────────────────────────── */
     @media (max-width: 768px) {
-
       .service-feature { padding: 60px 24px; }
-
       .service-feature-inner,
       .service-feature-inner.reverse {
-        grid-template-columns: 1fr;
-        direction: ltr;
-        gap: 36px;
+        grid-template-columns: 1fr !important;
+        direction: ltr !important;
+        gap: 32px !important;
       }
-
-      .service-feature-img img { height: 280px; }
-
-      .issues-grid { grid-template-columns: repeat(2, 1fr); }
-
-      .expect-grid { grid-template-columns: 1fr; gap: 16px; }
-
+      .service-feature-img img,
+      .service-feature-img-placeholder { height: 260px !important; }
+      .issues-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .expect-grid { grid-template-columns: 1fr !important; }
       .fees-block { padding: 36px 28px; }
     }
   </style>
@@ -223,6 +220,7 @@
         <li><a href="../index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="counselling.html" class="active">Counselling</a></li>
+        <li><a href="qualifications.html">Qualifications</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
@@ -233,97 +231,128 @@
   <!-- PAGE HERO -->
   <section style="background-color: var(--linen); padding: 90px 28px 72px; border-bottom: 1px solid var(--cream-dark);">
     <div class="container">
-      <span class="section-label reveal reveal-up">What we offer</span>
+      <span class="section-label reveal reveal-up">What I offer</span>
       <h1 class="reveal reveal-up reveal-delay-1" style="margin-top: 12px; font-size: clamp(2.2rem, 4vw, 3.5rem); max-width: 640px; line-height: 1.12;">A supported space<br>to explore what <em>matters</em></h1>
-      <p class="reveal reveal-up reveal-delay-2" style="font-size: 1.02rem; max-width: 520px; margin-top: 22px; line-height: 1.85;">Whether you are looking for traditional talking therapy, something more grounded in nature, or support for a child or young person — there is space here for you.</p>
+      <p class="reveal reveal-up reveal-delay-2" style="font-size: 1.02rem; max-width: 520px; margin-top: 22px; line-height: 1.85;">Whether you are looking for talking therapy, something more grounded in nature, or support for a child or young person — there is space here for you.</p>
     </div>
   </section>
 
-  <!-- ─────────────────────────────────────────────
-       SERVICE 1 — EQUINE ASSISTED (lead with strongest differentiator)
-       ───────────────────────────────────────────── -->
-  <section class="service-feature">
+  <!-- SERVICE 1 — INDIVIDUAL COUNSELLING -->
+  <section class="service-feature" id="individual">
+
+  <div class="service-feature-inner reverse">
+<div class="reveal reveal-right">
+        <div class="service-feature-img">
+          <img src="../images/room.jpg" alt="The Listening Room counselling room" />
+        </div>
+      </div>
+
+      <div class="service-text reveal reveal-left">
+        <span class="section-label">In person &amp; online</span>
+        <h2>Individual Counselling</h2>
+        <p>I offer counselling for adults, children, and young people — providing a safe, confidential space to explore whatever is causing difficulty or distress. People come for many reasons, including depression, anxiety, bereavement, loss, separation, abuse, trauma, PTSD, low self-esteem, and relationship issues.</p>
+        <p>My approach is integrative, meaning I draw on different therapeutic models to meet your individual needs. With a strong foundation in person-centred therapy, I begin by understanding your experience in the present, listening carefully to what is happening for you now and helping you explore your thoughts, feelings, and challenges at your own pace. From there, we may look at how past experiences influence your current situation and emotional responses.</p>
+        <p>As insight grows, we begin to look towards the future. Solution-focused techniques can help shift your perspective from feeling stuck to seeing possibilities — identifying goals, exploring new ways of thinking, and taking steps towards meaningful change.</p>
+        <p>I also integrate Cognitive Behavioural Therapy (CBT), which helps identify unhelpful thought patterns, challenge fears and anxieties, and develop practical strategies for managing difficult emotions and situations. This combined approach supports both emotional understanding and positive, lasting change.</p>
+        <div class="delivery-strip">
+          <span class="delivery-tag">In person · Weston-under-Redcastle</span>
+          <span class="delivery-tag">Online sessions available</span>
+          <span class="delivery-tag">Adults, children &amp; young people</span>
+        </div>
+        <a href="contact.html" class="btn btn-outline">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRIDGE LINE -->
+  <div style="background-color: var(--linen); padding: 36px 28px; border-bottom: 1px solid var(--cream-dark); text-align: center;">
+    <p style="font-size: 0.97rem; max-width: 600px; margin: 0 auto; font-style: italic; color: var(--charcoal-light); line-height: 1.8;">Counselling is available in person in a private, comfortable setting or online, offering flexible support while maintaining a warm, non-judgmental and professional space.</p>
+  </div>
+
+<!-- SERVICE 2 — EQUINE ASSISTED -->
+  <section class="service-feature" id="equine">
     <div class="service-feature-inner">
-      <div class="service-feature-img reveal reveal-left">
-        <img src="../images/equine.jpg" alt="Equine assisted counselling session at The Listening Room, Shropshire" />
+      <div class="reveal reveal-left">
+        <div class="service-feature-img">
+<img src="../images/horse-1.jpg" alt="The horses at The Listening Room Counselling Service" />
+        </div>
       </div>
       <div class="service-text reveal reveal-right">
-        <span class="section-label">Outdoors with horses</span>
+        <span class="section-label">Outdoors with the herd</span>
         <h2>Equine Assisted Counselling &amp; Learning</h2>
-        <p>Equine assisted counselling and learning offers a unique, experiential way to support emotional wellbeing and personal development. Through ground-based activities with horses, you gain insight into your thoughts, feelings, and behaviours — supported by the horse's natural sensitivity to human emotion.</p>
-        <p>Sessions take place outdoors, working alongside the horses — not riding them. There is no experience required and nothing to prepare. Horses are honest, present, and non-judgmental. They respond to how you are feeling in the moment, not how you think you should be feeling.</p>
-        <p>We offer one-to-one sessions for children, young people and adults, as well as group sessions of up to six. Programmes can be tailored to individual needs, and Michelle has extensive experience working with primary and secondary schools, SEN departments, residential children's homes, and wider organisations.</p>
+        <p>Equine Assisted Counselling and Learning offers a unique, experiential approach to supporting emotional wellbeing and personal development. Through ground-based activities with horses, participants gain greater insight into their thoughts, feelings, and behaviours, supported by the horse's natural sensitivity to human emotion.</p>
+        <p>I provide one-to-one sessions for children, young people, and adults, as well as small group sessions of up to six participants. Programmes are tailored to individual needs, with extensive experience working alongside primary and secondary schools, SEN departments, residential children's homes, and wider organisations.</p>
+        <p>This includes supporting children and young people with additional SEN learning needs, emotional regulation difficulties, and those who have experienced significant trauma. Sessions are designed to be safe, nurturing, and developmentally appropriate, helping participants build confidence, resilience, self-esteem, and emotional regulation.</p>
+        <p>Horses offer immediate and honest feedback, making them powerful partners in developing self-awareness, communication skills, boundaries, and emotional understanding. Many participants experience positive changes in confidence, empathy, behaviour management, and overall wellbeing. Alongside therapeutic support, sessions can also help improve engagement, trust, problem-solving skills, and relationship building in a calm and natural environment.</p>
         <div class="delivery-strip">
-          <span class="delivery-tag">Outdoors · Hawkstone Park area</span>
-          <span class="delivery-tag">One-to-one &amp; group (up to 6)</span>
+          <span class="delivery-tag">Outdoors · Weston-under-Redcastle</span>
+          <span class="delivery-tag">One-to-one &amp; groups up to 6</span>
           <span class="delivery-tag">No horse experience needed</span>
         </div>
-        <div style="margin-top: 28px;">
-          <a href="contact.html" class="btn btn-outline">Get in touch about sessions</a>
-        </div>
+        <a href="contact.html" class="btn btn-outline">Get in touch</a>
       </div>
     </div>
   </section>
 
-  <!-- ─────────────────────────────────────────────
-       SERVICE 2 — INDIVIDUAL COUNSELLING
-       ───────────────────────────────────────────── -->
-  <section class="service-feature">
-    <div class="service-feature-inner reverse">
-      <div class="service-feature-img reveal reveal-right">
-        <img src="../images/horse-1.jpg" alt="Calm, private counselling space at The Listening Room" />
-      </div>
-      <div class="service-text reveal reveal-left">
-        <span class="section-label">Room-based &amp; online</span>
-        <h2>Individual Counselling</h2>
-        <p>I offer counselling for adults, children, and young people — providing a safe, confidential space to explore whatever is causing difficulty or distress. People come for many reasons: depression, anxiety, bereavement, loss, separation, abuse, trauma, PTSD, low self-esteem, and relationship issues.</p>
-        <p>My work begins with understanding your experience in the present. Using a person-centred approach, I listen carefully to what is happening for you now, helping you explore your thoughts, feelings, and challenges at your own pace. From there, we may look at how past experiences influence your current situation.</p>
-        <p>As insight grows, we begin to look towards the future. Solution-focused techniques can help shift your perspective from feeling stuck to seeing possibilities — identifying goals, exploring new ways of thinking, and taking steps towards meaningful change.</p>
-        <div class="delivery-strip">
-          <span class="delivery-tag">In person · Hawkstone Park area</span>
-          <span class="delivery-tag">Online sessions available</span>
-          <span class="delivery-tag">50 minute sessions</span>
-        </div>
-        <div style="margin-top: 28px;">
-          <a href="contact.html" class="btn btn-outline">Get in touch</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─────────────────────────────────────────────
-       SERVICE 3 — CHILDREN & YOUNG PEOPLE
-       ───────────────────────────────────────────── -->
+  <!-- SERVICE 3 — YOUNG PEOPLE -->
   <section class="service-feature">
     <div class="service-feature-inner">
-      <div class="service-feature-img reveal reveal-left">
-        <img src="../images/horse-3.jpg" alt="Support for children and young people at The Listening Room" />
+
+      <div class="reveal reveal-left">
+        <div class="service-feature-img">
+          <img src="../images/dan2.jpg" alt="Child connecting with a horse during an equine assisted session" />
+        </div>
       </div>
+
       <div class="service-text reveal reveal-right">
         <span class="section-label">For children &amp; young people</span>
         <h2>Support for Young People</h2>
-        <p>Working with children and young people requires a different approach. They do not always have the language to express what they are feeling, so Michelle uses creative and therapeutic methods — art, craft, play, sand tray work, and the animals themselves. These approaches allow children to communicate their inner world in a way that feels natural and safe.</p>
-        <p>Michelle has many years of experience supporting children and teenagers through anxiety, bereavement, behavioural challenges, SEN needs, autism, ADHD, and PTSD. She is also an external provider for a local Academy Trust and is DSL Safeguarding trained, which strengthens her work across educational and multi-agency settings.</p>
+        <p>Working with children and young people requires a different approach. They do not always have the language to express what they are feeling, so I use creative and therapeutic methods — art, craft, play, sand tray work, and the animals themselves. These approaches allow children to communicate their inner world in a way that feels natural and safe.</p>
+        <p>I have many years of experience supporting children and teenagers through anxiety, bereavement, behavioural challenges, SEN needs, autism, ADHD, and PTSD. I am also an external provider for a local Academy Trust and am DSL Safeguarding trained, which strengthens my work across educational and multi-agency settings.</p>
         <p>If you are a parent or carer looking for support for a child or young person, please get in touch for an initial conversation about what might work best.</p>
         <div class="delivery-strip">
           <span class="delivery-tag">SEN · Autism · ADHD · PTSD</span>
           <span class="delivery-tag">DSL Safeguarding Trained</span>
           <span class="delivery-tag">School &amp; private settings</span>
         </div>
-        <div style="margin-top: 28px;">
-          <a href="contact.html" class="btn btn-outline">Get in touch for young people</a>
+        <a href="contact.html" class="btn btn-outline">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+<!-- SERVICE 4 — CLINICAL SUPERVISION -->
+  <section class="service-feature" id="supervision">
+    <div class="service-feature-inner">
+      <div class="reveal reveal-left">
+        <div class="service-feature-img-placeholder">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--rose-light)" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <p>Supervision photo coming soon</p>
         </div>
+      </div>
+      <div class="service-text reveal reveal-right">
+        <span class="section-label">For fellow practitioners</span>
+        <h2>Clinical Supervision</h2>
+        <p>I have been a clinical supervisor for many years and value the variety, depth, and professional connection it brings. I particularly enjoy supporting trainee counsellors as they grow in confidence and move toward qualification.</p>
+        <p>My approach is integrative, grounded in the person-centred model and informed by Cognitive Behavioural Therapy (CBT), systemic thinking, and the Seven Eyed Model of Supervision. I work within the BACP Ethical Framework and follow the professional standards of Horses in Education and Therapy International (HETI).</p>
+        <p>I also offer equine-assisted counselling supervision for practitioners who incorporate horses into their therapeutic work. Supervision is available monthly or fortnightly, online and in person.</p>
+        <div class="delivery-strip">
+          <span class="delivery-tag">Online &amp; in person</span>
+          <span class="delivery-tag">Monthly or fortnightly</span>
+          <span class="delivery-tag">Trainees &amp; qualified practitioners</span>
+        </div>
+        <a href="contact.html" class="btn btn-outline">Get in touch</a>
       </div>
     </div>
   </section>
 
   <!-- WHO IT'S FOR -->
+
   <section style="padding: 90px 28px; background-color: var(--linen); border-top: 1px solid var(--cream-dark); border-bottom: 1px solid var(--cream-dark);">
     <div class="container" style="max-width: var(--max-width);">
       <div class="reveal reveal-up">
         <span class="section-label">Who counselling is for</span>
-        <h2 style="margin: 14px 0 14px;">You don't need a crisis<br>to come to counselling</h2>
-        <p style="max-width: 560px; font-size: 0.97rem; line-height: 1.85;">People come to The Listening Room for all kinds of reasons. Some are going through something specific. Others just know that something doesn't feel right. Both are completely valid.</p>
+        <h2 style="margin: 14px 0 14px;">You don't need to be in crisis<br>to come to counselling</h2>
+        <p style="max-width: 560px; font-size: 0.97rem; line-height: 1.85;">People come for all kinds of reasons. Some are going through something specific. Others just know that something doesn't feel right. Both are completely valid.</p>
       </div>
       <div class="issues-grid">
         <div class="issue-pill reveal reveal-up reveal-delay-1"><p>Anxiety &amp; worry</p></div>
@@ -350,30 +379,26 @@
   <section style="padding: 90px 28px; background-color: var(--warm-white); border-bottom: 1px solid var(--cream-dark);">
     <div class="container" style="max-width: var(--max-width);">
       <div class="reveal reveal-up">
-        <span class="section-label">The process</span>
+        <span class="section-label">Getting started</span>
         <h2 style="margin: 14px 0 12px;">What to expect</h2>
-        <p style="max-width: 520px; font-size: 0.97rem; line-height: 1.85;">There is nothing to prepare. Just reach out, and Michelle will take it from there.</p>
+        <p style="max-width: 520px; font-size: 0.97rem; line-height: 1.85;">There is nothing to prepare. Just get in touch and I will take it from there.</p>
       </div>
       <div class="expect-grid">
-
         <div class="expect-card reveal reveal-up reveal-delay-1">
           <span class="expect-number">01</span>
           <h3>Get in touch</h3>
-          <p>Send a message or call. There is no commitment at this stage — just a chance to ask questions, share a little about what's going on, and see if it feels right.</p>
+          <p>Send a message or call. No commitment, no pressure — just a chance to ask questions and see if it feels right.</p>
         </div>
-
         <div class="expect-card reveal reveal-up reveal-delay-2">
           <span class="expect-number">02</span>
           <h3>Initial conversation</h3>
-          <p>Michelle will have a short conversation to understand what you're looking for and answer any questions you have — before any commitment to sessions.</p>
+          <p>I will have a short conversation to understand what you are looking for and answer any questions you have — before any commitment to sessions.</p>
         </div>
-
         <div class="expect-card reveal reveal-up reveal-delay-3">
           <span class="expect-number">03</span>
           <h3>Your first session</h3>
-          <p>The first session is a chance to meet properly, talk through what has brought you to counselling, and decide together how you would like to move forward.</p>
+          <p>The first session is a chance to meet properly, talk through what has brought you here, and decide together how you would like to move forward.</p>
         </div>
-
       </div>
     </div>
   </section>
@@ -384,13 +409,13 @@
       <div class="reveal reveal-up">
         <span class="section-label">Fees</span>
         <h2 style="margin: 14px 0 12px;">Session fees</h2>
-        <p style="max-width: 520px; font-size: 0.97rem; line-height: 1.85;">Sessions are priced to be accessible. Michelle is happy to have an open conversation about fees and your circumstances before any commitment is made.</p>
+        <p style="max-width: 520px; font-size: 0.97rem; line-height: 1.85;">Sessions are priced to be accessible. I am happy to have an open conversation about fees before any commitment is made.</p>
       </div>
       <div class="fees-block reveal reveal-up">
-        <h3>Get in touch to discuss fees</h3>
-        <p>Rather than publishing a fixed price list, Michelle prefers to have a short conversation first. Every situation is different, and she would rather talk things through than have cost be a barrier to getting support.</p>
-        <p>Please don't let uncertainty about fees stop you from reaching out. Just send a message and Michelle will come back to you within one working day.</p>
-        <a href="contact.html" class="btn btn-outline">Send a message</a>
+        <p class="fee-amount">£60</p>
+        <p class="fee-label">per hour · individual sessions</p>
+        <p>For schools and organisations, I work on a service level agreement basis with tiered pricing. To discuss fees for your setting, please get in touch directly.</p>
+        <a href="contact.html" class="btn btn-outline" style="margin-top: 8px;">Get in touch</a>
       </div>
     </div>
   </section>
@@ -400,8 +425,8 @@
     <div class="cta-warm-inner reveal reveal-up">
       <span class="section-label" style="color: rgba(250,247,242,0.55);">Whenever you're ready</span>
       <h2>There's no rush</h2>
-      <p>Getting in touch doesn't mean committing to anything. Just send Michelle a message and she'll come back to you within one working day.</p>
-      <a href="contact.html" class="btn btn-rose" style="margin-top: 2rem; padding: 15px 44px;">Send a message</a>
+      <p>Getting in touch doesn't mean committing to anything. Just send a message and I will come back to you within one working day.</p>
+      <a href="contact.html" class="btn btn-rose" style="margin-top: 2rem; padding: 15px 44px;">Get in touch</a>
     </div>
   </section>
 
@@ -411,7 +436,7 @@
       <div class="footer-brand">
         <p class="nav-logo" style="color: var(--cream);">The Listening Room</p>
         <p style="font-style: italic; color: var(--rose-light); font-family: var(--font-heading); font-size: 1.05rem; margin-top: 6px;">Helping Humans Heal</p>
-        <p style="margin-top: 14px;">Equine Assisted Counselling<br>Hawkstone Park, Shropshire</p>
+        <p style="margin-top: 14px;">The Listening Room Counselling Service<br>Weston-under-Redcastle, Shropshire</p>
       </div>
       <div>
         <p class="footer-heading">Quick Links</p>
@@ -419,6 +444,7 @@
           <li><a href="../index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="counselling.html">Counselling</a></li>
+          <li><a href="qualifications.html">Qualifications</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -426,10 +452,10 @@
       <div>
         <p class="footer-heading">Get in Touch</p>
         <div class="footer-contact">
-          <p>Hawkstone Park, Shropshire</p>
+          <p>Weston-under-Redcastle, Shropshire</p>
           <p><a href="mailto:listeningroomcounselling@gmail.com" style="color: rgba(245,240,232,0.6);">listeningroomcounselling@gmail.com</a></p>
           <p><a href="tel:07870639770" style="color: rgba(245,240,232,0.6);">07870 639770</a></p>
-          <p style="margin-top: 14px; font-size: 0.78rem; color: rgba(245,240,232,0.38);">Registered MBACP (Accredited)<br>EAGALA Trained · HETI Member</p>
+          <p style="margin-top: 14px; font-size: 0.78rem; color: rgba(245,240,232,0.38);">Registered MBACP (Accredited) No. 118987<br>EAGALA Trained · HETI Member</p>
         </div>
       </div>
     </div>

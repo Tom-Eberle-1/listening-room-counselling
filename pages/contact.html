@@ -3,15 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Get in Touch | The Listening Room Counselling Shropshire</title>
-  <meta name="description" content="Send Michelle a message. No pressure, no commitment — just a chance to ask questions and find out if The Listening Room feels right for you." />
+  <title>Get in Touch | The Listening Room Counselling Service</title>
+  <meta name="description" content="Get in touch with The Listening Room Counselling Service. Parkside, Weston-under-Redcastle, Nr Shrewsbury, Shropshire. No pressure, no commitment." />
   <link rel="stylesheet" href="../css/style.css" />
   <style>
 
-    /* ── FORM ───────────────────────────────────── */
-    .form-field {
-      margin-bottom: 22px;
-    }
+    .form-field { margin-bottom: 22px; }
 
     .form-label {
       display: block;
@@ -32,9 +29,7 @@
       font-size: 0.78rem;
     }
 
-    .form-input,
-    .form-select,
-    .form-textarea {
+    .form-input, .form-select, .form-textarea {
       width: 100%;
       padding: 13px 16px;
       border: 1px solid var(--cream-dark);
@@ -49,15 +44,12 @@
       appearance: none;
     }
 
-    .form-input:focus,
-    .form-select:focus,
-    .form-textarea:focus {
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
       border-color: var(--rose-light);
       box-shadow: 0 0 0 3px rgba(176,133,133,0.1);
     }
 
-    .form-input::placeholder,
-    .form-textarea::placeholder {
+    .form-input::placeholder, .form-textarea::placeholder {
       color: var(--plum-light);
       opacity: 0.6;
     }
@@ -76,8 +68,6 @@
       cursor: pointer;
     }
 
-    .form-select option { color: var(--charcoal); }
-
     .form-submit {
       width: 100%;
       padding: 15px 28px;
@@ -94,16 +84,9 @@
       margin-top: 6px;
     }
 
-    .form-submit:hover {
-      background-color: var(--rose-dark);
-    }
+    .form-submit:hover { background-color: var(--rose-dark); }
+    .form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
 
-    .form-submit:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
-
-    /* ── SUCCESS STATE ──────────────────────────── */
     .form-success {
       display: none;
       background-color: var(--linen);
@@ -113,17 +96,8 @@
       text-align: center;
     }
 
-    .form-success h3 {
-      font-size: 1.5rem;
-      margin-bottom: 12px;
-      color: var(--charcoal);
-    }
-
-    .form-success p {
-      font-size: 0.95rem;
-      max-width: none;
-      line-height: 1.8;
-    }
+    .form-success h3 { font-size: 1.5rem; margin-bottom: 12px; }
+    .form-success p { font-size: 0.95rem; max-width: none; line-height: 1.8; }
 
     .form-success-icon {
       width: 48px;
@@ -136,10 +110,9 @@
       margin: 0 auto 20px;
     }
 
-    /* ── INFO PANEL ─────────────────────────────── */
     .contact-info-block {
-      margin-bottom: 36px;
-      padding-bottom: 36px;
+      margin-bottom: 32px;
+      padding-bottom: 32px;
       border-bottom: 1px solid var(--cream-dark);
     }
 
@@ -173,17 +146,14 @@
       transition: color 0.2s ease;
     }
 
-    .contact-info-block a:hover {
-      color: var(--rose-dark);
-    }
+    .contact-info-block a:hover { color: var(--rose-dark); }
 
-    /* ── REASSURANCE BOX ────────────────────────── */
     .reassurance-box {
       background-color: var(--linen);
       border: 1px solid var(--cream-dark);
       border-radius: 2px;
       padding: 28px 30px;
-      margin-top: 36px;
+      margin-top: 32px;
     }
 
     .reassurance-box p {
@@ -193,12 +163,23 @@
       color: var(--charcoal-light);
     }
 
-    /* ── MOBILE ─────────────────────────────────── */
+    /* Map */
+    .map-wrapper {
+      margin-top: 28px;
+      border-radius: 2px;
+      overflow: hidden;
+      border: 1px solid var(--cream-dark);
+    }
+
+    .map-wrapper iframe {
+      display: block;
+      width: 100%;
+      height: 280px;
+      border: none;
+    }
+
     @media (max-width: 768px) {
-      .contact-grid {
-        grid-template-columns: 1fr !important;
-        gap: 52px !important;
-      }
+      .contact-grid { grid-template-columns: 1fr !important; gap: 52px !important; }
     }
   </style>
 </head>
@@ -215,6 +196,7 @@
         <li><a href="../index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="counselling.html">Counselling</a></li>
+        <li><a href="qualifications.html">Qualifications</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contact.html" class="active">Contact</a></li>
         <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
@@ -227,7 +209,7 @@
     <div class="container">
       <span class="section-label reveal reveal-up">Get in touch</span>
       <h1 class="reveal reveal-up reveal-delay-1" style="margin-top: 12px; font-size: clamp(2.2rem, 4vw, 3.5rem); max-width: 580px; line-height: 1.12;">No pressure.<br>Just a <em>conversation</em>.</h1>
-      <p class="reveal reveal-up reveal-delay-2" style="font-size: 1.02rem; max-width: 500px; margin-top: 22px; line-height: 1.85;">There is no commitment to getting in touch. If you have a question, or just want to find out more, send Michelle a message and she'll come back to you within one working day.</p>
+      <p class="reveal reveal-up reveal-delay-2" style="font-size: 1.02rem; max-width: 500px; margin-top: 22px; line-height: 1.85;">There is no commitment to getting in touch. If you have a question, or just want to find out more, send a message and I will come back to you within one working day.</p>
     </div>
   </section>
 
@@ -236,67 +218,36 @@
     <div class="container">
       <div class="contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; max-width: var(--max-width); margin: 0 auto;">
 
-        <!-- ── FORM ────────────────────────────── -->
+        <!-- FORM -->
         <div class="reveal reveal-left">
           <span class="section-label">Send a message</span>
-          <h2 style="margin: 14px 0 32px; font-size: clamp(1.6rem, 2.5vw, 2.1rem);">We'd love to hear from you</h2>
+          <h2 style="margin: 14px 0 32px; font-size: clamp(1.6rem, 2.5vw, 2.1rem);">I'd love to hear from you</h2>
 
-          <!-- Netlify form — data-netlify="true" activates Netlify Forms on deploy -->
           <form
             id="contact-form"
             name="contact"
             method="POST"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
-            netlify-recaptcha="false"
           >
-            <!-- Required hidden fields for Netlify -->
             <input type="hidden" name="form-name" value="contact" />
-
-            <!-- Honeypot spam trap — hidden from real users -->
             <div style="display: none;" aria-hidden="true">
               <label>Don't fill this out: <input name="bot-field" /></label>
             </div>
 
             <div class="form-field">
               <label class="form-label" for="name">Your name</label>
-              <input
-                class="form-input"
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Your full name"
-                required
-                autocomplete="name"
-              />
+              <input class="form-input" type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name" />
             </div>
 
             <div class="form-field">
               <label class="form-label" for="email">Email address</label>
-              <input
-                class="form-input"
-                type="email"
-                id="email"
-                name="email"
-                placeholder="your@email.com"
-                required
-                autocomplete="email"
-              />
+              <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" />
             </div>
 
             <div class="form-field">
-              <label class="form-label" for="phone">
-                Phone number
-                <span class="form-label-note">&nbsp;(optional)</span>
-              </label>
-              <input
-                class="form-input"
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="Your phone number"
-                autocomplete="tel"
-              />
+              <label class="form-label" for="phone">Phone number <span class="form-label-note">(optional)</span></label>
+              <input class="form-input" type="tel" id="phone" name="phone" placeholder="Your phone number" autocomplete="tel" />
             </div>
 
             <div class="form-field">
@@ -313,47 +264,33 @@
             </div>
 
             <div class="form-field">
-              <label class="form-label" for="message">
-                Your message
-                <span class="form-label-note">&nbsp;— say as much or as little as you like</span>
-              </label>
-              <textarea
-                class="form-textarea"
-                id="message"
-                name="message"
-                rows="5"
-                placeholder="Tell Michelle a little about what you're looking for, or just say hello..."
-                required
-              ></textarea>
+              <label class="form-label" for="message">Your message <span class="form-label-note">— say as much or as little as you like</span></label>
+              <textarea class="form-textarea" id="message" name="message" rows="5" placeholder="Tell me a little about what you're looking for, or just say hello..." required></textarea>
             </div>
 
-            <button type="submit" class="form-submit" id="submit-btn">
-              Send message
-            </button>
-
+            <button type="submit" class="form-submit" id="submit-btn">Send message</button>
           </form>
 
-          <!-- Success message (shown after JS intercept) -->
           <div class="form-success" id="form-success">
             <div class="form-success-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="1.8"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
             <h3>Message sent</h3>
-            <p>Thank you for getting in touch. Michelle will come back to you within one working day.</p>
+            <p>Thank you for getting in touch. I will come back to you within one working day.</p>
             <p style="margin-top: 10px; font-size: 0.85rem; color: var(--charcoal-light);">In the meantime, you might like to read more about <a href="counselling.html" style="color: var(--rose-dark);">the sessions</a> or <a href="about.html" style="color: var(--rose-dark);">meet the team</a>.</p>
           </div>
 
-          <p style="margin-top: 20px; font-size: 0.8rem; color: var(--charcoal-light); max-width: none; line-height: 1.7;">By sending this message you agree that Michelle may use your contact details to respond to your enquiry. Your information will never be shared with third parties.</p>
+          <p style="margin-top: 20px; font-size: 0.8rem; color: var(--charcoal-light); max-width: none; line-height: 1.7;">By sending this message you agree that I may use your contact details to respond to your enquiry. Your information will never be shared with third parties.</p>
         </div>
 
-        <!-- ── INFO PANEL ──────────────────────── -->
+        <!-- INFO PANEL -->
         <div class="reveal reveal-right">
           <span class="section-label">Contact details</span>
           <h2 style="margin: 14px 0 36px; font-size: clamp(1.6rem, 2.5vw, 2.1rem);">The practice</h2>
 
           <div class="contact-info-block">
-            <span class="contact-info-label">Location</span>
-            <p>Near Hawkstone Park Hotel and Golf Club<br>North Shropshire</p>
+            <span class="contact-info-label">Address</span>
+            <p>The Listening Room Counselling Service<br>Parkside<br>Weston-under-Redcastle<br>Nr Shrewsbury<br>Shropshire<br>SY4 5UX</p>
           </div>
 
           <div class="contact-info-block">
@@ -373,11 +310,22 @@
 
           <div class="contact-info-block">
             <span class="contact-info-label">Accreditations</span>
-            <p>Registered MBACP (Accredited)<br>EAGALA Trained · HETI Federation Member<br>EASP Registered Practitioner</p>
+            <p>Registered MBACP (Accredited) No. 118987<br>EAGALA Trained · <a href="https://www.hetifederation.org" target="_blank" rel="noopener">Horses in Education and Therapy International (HETI)</a><br><a href="https://www.easp.co.uk" target="_blank" rel="noopener">Equine Assisted Services Partnership (EASP)</a></p>
+          </div>
+
+          <!-- Google Map -->
+          <div class="map-wrapper">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9635.434329085707!2d-2.6511586829609515!3d52.86094965960024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487a9011f5f93dd9%3A0x9cf941aac7066106!2sWeston%2C%20Shrewsbury%20SY4%205UX!5e0!3m2!1sen!2suk!4v1779461519594!5m2!1sen!2suk"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="The Listening Room Counselling Service location map">
+            </iframe>
           </div>
 
           <div class="reassurance-box">
-            <p>All enquiries are treated with complete confidentiality. There is no pressure and no commitment to getting in touch — Michelle is simply here to help you find out if this feels right for you.</p>
+            <p>All enquiries are treated with complete confidentiality. There is no pressure and no commitment to getting in touch — I am simply here to help you find out if this feels right for you.</p>
           </div>
         </div>
 
@@ -390,7 +338,7 @@
     <div class="cta-warm-inner reveal reveal-up">
       <span class="section-label" style="color: rgba(250,247,242,0.55);">Whenever you're ready</span>
       <h2>There's no rush</h2>
-      <p>Getting in touch doesn't mean committing to anything. Michelle will always come back to you gently, without pressure.</p>
+      <p>Getting in touch doesn't mean committing to anything. I will always come back to you gently, without pressure.</p>
       <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
         <a href="tel:07870639770" class="btn btn-ghost">Call 07870 639770</a>
         <a href="mailto:listeningroomcounselling@gmail.com" class="btn btn-rose">Send an email</a>
@@ -404,7 +352,7 @@
       <div class="footer-brand">
         <p class="nav-logo" style="color: var(--cream);">The Listening Room</p>
         <p style="font-style: italic; color: var(--rose-light); font-family: var(--font-heading); font-size: 1.05rem; margin-top: 6px;">Helping Humans Heal</p>
-        <p style="margin-top: 14px;">Equine Assisted Counselling<br>Hawkstone Park, Shropshire</p>
+        <p style="margin-top: 14px;">The Listening Room Counselling Service<br>Weston-under-Redcastle, Shropshire</p>
       </div>
       <div>
         <p class="footer-heading">Quick Links</p>
@@ -412,6 +360,7 @@
           <li><a href="../index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="counselling.html">Counselling</a></li>
+          <li><a href="qualifications.html">Qualifications</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -419,10 +368,10 @@
       <div>
         <p class="footer-heading">Get in Touch</p>
         <div class="footer-contact">
-          <p>Hawkstone Park, Shropshire</p>
+          <p>Weston-under-Redcastle, Shropshire</p>
           <p><a href="mailto:listeningroomcounselling@gmail.com" style="color: rgba(245,240,232,0.6);">listeningroomcounselling@gmail.com</a></p>
           <p><a href="tel:07870639770" style="color: rgba(245,240,232,0.6);">07870 639770</a></p>
-          <p style="margin-top: 14px; font-size: 0.78rem; color: rgba(245,240,232,0.38);">Registered MBACP (Accredited)<br>EAGALA Trained · HETI Member</p>
+          <p style="margin-top: 14px; font-size: 0.78rem; color: rgba(245,240,232,0.38);">Registered MBACP (Accredited) No. 118987<br>EAGALA Trained · HETI Member</p>
         </div>
       </div>
     </div>
@@ -433,36 +382,24 @@
 
   <script src="../js/main.js"></script>
   <script>
-    // ── NETLIFY FORM SUBMISSION ──────────────────
-    // Intercepts the native submit, posts via fetch,
-    // then shows the success state without a page reload.
-    const form       = document.getElementById('contact-form');
-    const success    = document.getElementById('form-success');
-    const submitBtn  = document.getElementById('submit-btn');
+    const form = document.getElementById('contact-form');
+    const success = document.getElementById('form-success');
+    const submitBtn = document.getElementById('submit-btn');
 
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
-
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending…';
-
       const data = new FormData(form);
-
       try {
         await fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: new URLSearchParams(data).toString()
         });
-
-        // Hide form, show success
         form.style.display = 'none';
         success.style.display = 'block';
-
       } catch (err) {
-        // If fetch fails, fall back to native form submit
-        // so the message still gets through via Netlify's
-        // default success page
         submitBtn.disabled = false;
         submitBtn.textContent = 'Send message';
         form.submit();
