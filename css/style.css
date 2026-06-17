@@ -192,7 +192,7 @@ nav {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 28px;
-  height: 66px;
+  height: 76px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -200,10 +200,26 @@ nav {
 
 .nav-logo {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.6rem;
   font-weight: 400;
   color: var(--charcoal);
   letter-spacing: 0.01em;
+  line-height: 1.1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.nav-logo-sub {
+  display: block;
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--charcoal-light);
+  line-height: 1;
+  margin-top: 2px;
 }
 
 .nav-links {

@@ -6,6 +6,7 @@
   <title>About | The Listening Room Counselling Service</title>
   <meta name="description" content="Meet Michelle Welch, MBACP Accredited counsellor and clinical supervisor at The Listening Room Counselling Service, Shropshire." />
   <link rel="stylesheet" href="../css/style.css" />
+  
   <style>
 
     .credential-bar {
@@ -294,6 +295,39 @@
       .companions-grid { grid-template-columns: 1fr !important; }
       .supervision-inner { grid-template-columns: 1fr !important; gap: 36px !important; }
     }
+
+/* ── Animal image position fixes ── */
+
+/* Becca — show full head, pull back slightly */
+.horse-card:nth-child(1) .horse-card-img img {
+  object-position: center;
+}
+
+/* Crystal — more face in frame */
+.horse-card:nth-child(2) .horse-card-img img {
+  object-position: center 15%;
+}
+
+/* Harley — leave as centre unless you want adjustment */
+.horse-card:nth-child(3) .horse-card-img img {
+  object-position: center center;
+}
+
+/* Roxy — bring face down into frame */
+.companions-grid .horse-card:nth-child(1) .horse-card-img img {
+  object-position: center 20%;
+}
+
+/* Ace — already reasonable, slight upward nudge */
+.companions-grid .horse-card:nth-child(2) .horse-card-img img {
+  object-position: center 25%;
+}
+
+/* Doris — cat is low, bring up */
+.companions-grid .horse-card:nth-child(3) .horse-card-img img {
+  object-position: center 57%;
+}
+
   </style>
 </head>
 <body>
@@ -301,7 +335,7 @@
   <!-- NAV -->
   <nav>
     <div class="nav-inner">
-      <a href="../index.html" class="nav-logo">The Listening Room</a>
+<a href="../index.html" class="nav-logo">The Listening Room<span class="nav-logo-sub">Counselling Service</span></a>
       <button class="nav-toggle" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
       </button>
@@ -317,8 +351,8 @@
     </div>
   </nav>
 
-  <!-- PAGE HERO -->
-  <section style="background-color: var(--linen); padding: 90px 28px 72px; border-bottom: 1px solid var(--cream-dark);">
+<!-- PAGE HERO -->
+  <section style="background-color: var(--linen); padding: 72px 28px 48px; border-bottom: 1px solid var(--cream-dark);">
     <div class="container">
       <span class="section-label reveal reveal-up">About the practice</span>
       <h1 class="reveal reveal-up reveal-delay-1" style="margin-top: 12px; font-size: clamp(2.2rem, 4vw, 3.5rem); max-width: 620px; line-height: 1.12;">Counselling that meets you<br>where you <em>are</em></h1>
@@ -363,7 +397,7 @@
       <div class="credential-bar-divider"></div>
       <div class="credential-bar-item">
         <span class="credential-bar-dot"></span>
-        <p>EAGALA Trained · HETI Federation Member · EASP Registered</p>
+        <p>EAGALA Certified Professional 2016-2025 · HETI Federation Member · EASP Registered</p>
       </div>
       <div class="credential-bar-divider"></div>
       <div class="credential-bar-item">
@@ -571,7 +605,7 @@
           <p>Weston-under-Redcastle, Shropshire</p>
           <p><a href="mailto:listeningroomcounselling@gmail.com" style="color: rgba(245,240,232,0.6);">listeningroomcounselling@gmail.com</a></p>
           <p><a href="tel:07870639770" style="color: rgba(245,240,232,0.6);">07870 639770</a></p>
-          <p style="margin-top: 14px; font-size: 0.78rem; color: rgba(245,240,232,0.38);">Registered MBACP (Accredited) No. 118987<br>EAGALA Trained · HETI Member</p>
+          <p style="margin-top: 14px; font-size: 0.78rem; color: rgba(245,240,232,0.38);">Registered MBACP (Accredited) No. 118987<br>EAGALA Certified Professional 2016-2025 · HETI Member</p>
         </div>
       </div>
     </div>
