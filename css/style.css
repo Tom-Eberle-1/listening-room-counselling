@@ -1339,3 +1339,11 @@ footer {
   }
 
 }
+
+/* Bigger masthead logo */
+nav .nav-logo {
+  font-size: clamp(1.4rem, 2.5vw, 2.5rem);
+}
+nav .nav-logo-sub {
+  font-size: 0.64rem;
+}
