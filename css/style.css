@@ -855,6 +855,14 @@ footer {
   max-width: none;
 }
 
+.footer-legal {
+  font-size: 0.78rem;
+  margin-top: 8px;
+}
+.footer-legal a {
+  color: rgba(245,240,232,0.5);
+  text-decoration: underline;
+}
 /* =============================================
    PAGE HERO (inner pages)
    ============================================= */
